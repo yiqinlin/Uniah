@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linear_indicator"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="horizontal">
+
+    <FrameLayout
+        android:layout_width="20dp"
+        android:layout_height="25dp"
+        android:gravity="center">
+
+        <View
+            android:id="@+id/indicator_left"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_indicator" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="20dp"
+        android:layout_height="25dp"
+        android:gravity="center">
+
+        <View
+            android:id="@+id/indicator_mid"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_indicator" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="20dp"
+        android:layout_height="25dp"
+        android:gravity="center">
+
+        <View
+            android:id="@+id/indicator_right"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_indicator" />
+    </FrameLayout>
+</LinearLayout>

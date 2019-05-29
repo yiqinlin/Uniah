@@ -1,0 +1,31 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="QMUI.Compat.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/windowBackground</item>
+        <item name="android:buttonStyle">?android:attr/borderlessButtonStyle</item>
+
+
+        <item name="uni_alpha_pressed">0.5</item>
+        <item name="uni_alpha_disabled">1</item>
+
+        <item name="uni_general_shadow_elevation">0dp</item>
+        <item name="uni_general_shadow_alpha">1</item>
+
+        <item name="uni_theme_color">@color/themePrimary</item>
+
+
+
+    </style>
+
+    <style name="UniPullRefreshLayout">
+        <item name="uni_target_init_offset">0dp</item>
+        <item name="uni_target_refresh_offset">72dp</item>
+        <item name="uni_auto_calculate_refresh_init_offset">true</item>
+        <item name="uni_auto_calculate_refresh_end_offset">true</item>
+    </style>
+</resources>

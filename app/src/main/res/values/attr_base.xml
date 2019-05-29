@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="uni_alpha_pressed" format="float"/>
+    <attr name="uni_alpha_disabled" format="float"/>
+
+    <attr name="uni_general_shadow_elevation" format="dimension"/>
+    <attr name="uni_general_shadow_alpha" format="float"/>
+
+    <attr name="uni_theme_color" format="color"/>
+
+    <declare-styleable name="UniRadiusView">
+        <attr name="uni_borderWidth"/>
+        <attr name="uni_borderColor"/>
+        <attr name="uni_selectedMaskColor"/>
+        <attr name="uni_selectedBorderColor"/>
+        <attr name="uni_selectedBorderWidth"/>
+        <attr name="uni_cornerRadius"/>
+        <attr name="uni_isCircle"/>
+        <attr name="uni_isTouchSelectModeEnabled"/>
+    </declare-styleable>
+    <attr name="UniRadiusViewStyle" format="reference"/>
+
+    <declare-styleable name="UniPullRefreshLayout">
+        <!-- RefreshView的初始offset -->
+        <attr name="uni_refresh_init_offset" format="dimension"/>
+        <attr name="uni_load_init_offset" format="dimension"/>
+        <!-- 刷新时RefreshView的offset -->
+        <attr name="uni_refresh_end_offset" format="dimension"/>
+        <attr name="uni_load_end_offset" format="dimension"/>
+        <!-- TargetView(ListView或者ScrollView等)的初始位置 -->
+        <attr name="uni_target_init_offset" format="dimension"/>
+        <!-- 刷新时TargetView(ListView或者ScrollView等)的位置-->
+        <attr name="uni_target_refresh_offset" format="dimension"/>
+        <attr name="uni_target_load_offset" format="dimension"/>
+        <!-- 是否自动根据RefreshView的高度计算RefreshView的初始位置-->
+        <attr name="uni_auto_calculate_refresh_init_offset" format="boolean"/>
+        <attr name="uni_auto_calculate_load_init_offset" format="boolean"/>
+        <!-- 是否自动根据TargetView在刷新时的位置计算RefreshView的结束位置-->
+        <attr name="uni_auto_calculate_refresh_end_offset" format="boolean"/>
+        <attr name="uni_auto_calculate_load_end_offset" format="boolean"/>
+        <!-- TargetView的刷新位置与RefreshView高度相等-->
+        <attr name="uni_equal_target_refresh_offset_to_refresh_view_height" format="boolean"/>
+        <attr name="uni_equal_target_load_offset_to_load_view_height" format="boolean"/>
+    </declare-styleable>
+    <attr name="UniPullRefreshLayoutStyle" format="reference"/>
+
+    <declare-styleable name="UniLayout">
+        <attr name="android:maxWidth"/>
+        <attr name="android:maxHeight"/>
+        <attr name="android:minWidth"/>
+        <attr name="android:minHeight"/>
+        <attr name="uni_bottomDividerHeight" format="dimension"/>
+        <attr name="uni_bottomDividerColor" format="color|reference"/>
+        <attr name="uni_bottomDividerInsetLeft" format="dimension"/>
+        <attr name="uni_bottomDividerInsetRight" format="dimension"/>
+        <attr name="uni_topDividerHeight" format="dimension"/>
+        <attr name="uni_topDividerColor" format="color|reference"/>
+        <attr name="uni_topDividerInsetLeft" format="dimension"/>
+        <attr name="uni_topDividerInsetRight" format="dimension"/>
+        <attr name="uni_leftDividerWidth" format="dimension"/>
+        <attr name="uni_leftDividerColor" format="color|reference"/>
+        <attr name="uni_leftDividerInsetTop" format="dimension"/>
+        <attr name="uni_leftDividerInsetBottom" format="dimension"/>
+        <attr name="uni_rightDividerWidth" format="dimension"/>
+        <attr name="uni_rightDividerColor" format="color|reference"/>
+        <attr name="uni_rightDividerInsetTop" format="dimension"/>
+        <attr name="uni_rightDividerInsetBottom" format="dimension"/>
+        <attr name="uni_radius"/>
+        <attr name="uni_borderColor"/>
+        <attr name="uni_borderWidth"/>
+        <attr name="uni_outerNormalColor" format="color|reference"/>
+        <attr name="uni_hideRadiusSide" format="enum">
+            <enum name="none" value="0"/>
+            <enum name="top" value="1"/>
+            <enum name="right" value="2"/>
+            <enum name="bottom" value="3"/>
+            <enum name="left" value="4"/>
+        </attr>
+        <attr name="uni_showBorderOnlyBeforeL" format="boolean"/>
+        <attr name="uni_shadowElevation" format="dimension"/>
+        <attr name="uni_useThemeGeneralShadowElevation" format="boolean"/>
+        <attr name="uni_shadowAlpha" format="float"/>
+        <attr name="uni_outlineInsetTop" format="dimension"/>
+        <attr name="uni_outlineInsetLeft" format="dimension"/>
+        <attr name="uni_outlineInsetRight" format="dimension"/>
+        <attr name="uni_outlineInsetBottom" format="dimension"/>
+        <attr name="uni_outlineExcludePadding" format="boolean"/>
+    </declare-styleable>
+
+
+</resources>
