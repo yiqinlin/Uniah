@@ -35,10 +35,6 @@ public class FeedAdapter extends BaseAdapter<BaseData> {
 
             UniImageHelper.displayImage(mContext, data.getHead(), viewHolder.mHead);
 
-            int dp9 = UniDisplayHelper.dp2px(mContext, 9);
-            int dp2 = UniDisplayHelper.dp2px(mContext, 2);
-            viewHolder.mItem.setRadiusAndShadow(dp9, dp2, 0.1f);
-
             viewHolder.mNick.setText(data.getNick());
             viewHolder.mTime.setText(data.smartTime());
             viewHolder.mMore.setVisibility(View.VISIBLE);

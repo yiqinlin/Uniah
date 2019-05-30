@@ -16,7 +16,14 @@ import com.uniah.mobile.adapter.MineAdapter;
 import com.uniah.mobile.base.BaseData;
 import com.uniah.mobile.base.BaseFragment;
 import com.uniah.mobile.bean.FeedData;
+import com.uniah.mobile.bean.MineCardTitleData;
 import com.uniah.mobile.bean.MineHeadData;
+import com.uniah.mobile.bean.MineTeamData;
+import com.uniah.mobile.bean.MineToolData;
+import com.uniah.mobile.bean.MineUniData;
+import com.uniah.mobile.bean.MsgListData;
+import com.uniah.mobile.bean.MsgListHeadData;
+import com.uniah.mobile.bean.SearchData;
 import com.uniah.mobile.layout.UniPullLayout;
 import com.uniah.mobile.util.UniStatusBarHelper;
 
@@ -68,6 +75,58 @@ public class MineFragment extends BaseFragment {
         data.setRightTitle("认识我");
 
         mAdapter.add(data);
+
+        MineUniData data1 = new MineUniData();
+
+        data1.setUniLogo("http://39.108.118.215/imgs/eb84d6962419be7594bd804bca2cbaa0.jpg");
+        data1.setUniName("成都东软学院");
+        data1.setUniSlogan("精勤博学，学以致用");
+        data1.setFlag("未认证");
+
+        mAdapter.add(data1);
+
+        MineToolData data2 = new MineToolData();
+
+        data2.setToolTitle("我的工具");
+
+        data2.setFirstImageResource(R.drawable.ic_home_black_24dp);
+        data2.setSecondImageResource(R.drawable.ic_home_black_24dp);
+        data2.setThirdImageResource(R.drawable.ic_home_black_24dp);
+        data2.setFourthImageResource(R.drawable.ic_home_black_24dp);
+
+        data2.setFirstBackgroundResource(R.color.themePrimary);
+        data2.setSecondBackgroundResource(R.color.themePrimary);
+        data2.setThirdBackgroundResource(R.color.themePrimary);
+        data2.setFourthBackgroundResource(R.color.themePrimary);
+
+        data2.setFirstName("我的赞");
+        data2.setSecondName("我的评论");
+        data2.setThirdName("收藏");
+        data2.setFourthName("表情");
+
+        mAdapter.add(data2);
+
+
+        MineCardTitleData data3 = new MineCardTitleData();
+        data3.setTitle("我的卡片");
+        mAdapter.add(data3);
+
+        MineTeamData data4 = new MineTeamData();
+
+        data4.setToolTitle("我的团队");
+        data4.setShowMoreBtn(true);
+
+        data4.setFirstLogo("http://39.108.118.215/imgs/eb84d6962419be7594bd804bca2cbaa0.jpg");
+        data4.setSecondLogo("http://39.108.118.215/imgs/eb84d6962419be7594bd804bca2cbaa0.jpg");
+        data4.setThirdLogo("http://39.108.118.215/imgs/eb84d6962419be7594bd804bca2cbaa0.jpg");
+        data4.setFourthLogo("http://39.108.118.215/imgs/eb84d6962419be7594bd804bca2cbaa0.jpg");
+
+        data4.setFirstName("移动MM");
+        data4.setSecondName("ACM实验室");
+        data4.setThirdName("社团联合会");
+        data4.setFourthName("计科五班");
+
+        mAdapter.add(data4);
     }
 
 }

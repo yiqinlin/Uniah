@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="20dp"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="12dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <View
+            android:id="@+id/title_single_cursor"
+            android:layout_width="4dp"
+            android:layout_height="12dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/tab_cursor" />
+
+        <TextView
+            android:id="@+id/title_single_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="5dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/text_dark"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_gravity="center_vertical"
+        android:gravity="end"
+        android:orientation="horizontal"
+        android:paddingStart="6dp"
+        android:paddingEnd="6dp">
+
+        <com.uniah.mobile.layout.UniFrameLayout
+            android:id="@+id/title_single_btn_sub_layout"
+            android:layout_width="28dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/title_single_btn_sub_img"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_gravity="center"
+                android:background="@drawable/ic_dashboard_black_24dp"
+                android:scaleType="fitCenter" />
+        </com.uniah.mobile.layout.UniFrameLayout>
+
+        <TextView
+            android:id="@+id/title_single_sub_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:textColor="@color/text_light"
+            android:textSize="13sp"
+            android:visibility="gone" />
+
+        <com.uniah.mobile.layout.UniFrameLayout
+            android:id="@+id/title_single_btn_layout"
+            android:layout_width="28dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/title_single_btn_img"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_gravity="center"
+                android:background="@drawable/ic_home_black_24dp"
+                android:scaleType="fitCenter" />
+        </com.uniah.mobile.layout.UniFrameLayout>
+    </LinearLayout>
+</LinearLayout>

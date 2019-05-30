@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
 
     <com.uniah.mobile.layout.UniLinearLayout
@@ -13,15 +13,18 @@
         android:layout_marginTop="32dp"
         android:layout_marginRight="12dp"
         android:background="@android:color/white"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        app:uni_radius="9dp"
+        app:uni_shadowAlpha="0.1"
+        app:uni_shadowElevation="2dp">
 
         <LinearLayout
             android:id="@+id/mine_head_user_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="12dp"
             android:background="@drawable/bg_press_select"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:paddingBottom="12dp">
 
             <com.uniah.mobile.view.UniRadiusView
                 android:id="@+id/mine_head_user_head"
@@ -135,11 +138,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="1.5dp"
+                    android:layout_marginTop="1dp"
                     android:ellipsize="end"
                     android:gravity="center"
                     android:maxLines="1"
-                    android:textColor="@color/text_normal"
+                    android:textColor="@color/text_light"
                     android:textSize="12sp" />
 
             </LinearLayout>
@@ -173,11 +176,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="1.5dp"
+                    android:layout_marginTop="1dp"
                     android:ellipsize="end"
                     android:gravity="center"
                     android:maxLines="1"
-                    android:textColor="@color/text_normal"
+                    android:textColor="@color/text_light"
                     android:textSize="12sp" />
 
             </LinearLayout>
@@ -211,11 +214,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="1.5dp"
+                    android:layout_marginTop="1dp"
                     android:ellipsize="end"
                     android:gravity="center"
                     android:maxLines="1"
-                    android:textColor="@color/text_normal"
+                    android:textColor="@color/text_light"
                     android:textSize="12sp" />
 
             </LinearLayout>

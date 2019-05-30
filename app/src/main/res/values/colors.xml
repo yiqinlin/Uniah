@@ -19,10 +19,13 @@
 
 
     <color name="transparent">#00000000</color>
-    <color name="cursor">#66000000</color>
+    <color name="text_cursor">#66000000</color>
     <color name="view_press">#08000000</color>
     <color name="tab_cursor">#FF8D08</color>
     <color name="bg_refresh">#F8F8F8</color>
+    <color name="item_line">#F8F8F8</color>
+
+
 
     <!-- base -->
     <color name="uni_config_color_separator">#DEE0E2</color>
