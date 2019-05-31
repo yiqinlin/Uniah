@@ -21,11 +21,8 @@ import java.util.List;
 
 public class NoticeListAdapter extends BaseAdapter<BaseData> {
 
-    Context mContext;
-
     public NoticeListAdapter(Context context, List<BaseData> list) {
         super(context, list);
-        this.mContext = context;
     }
 
     @Override
@@ -35,7 +32,7 @@ public class NoticeListAdapter extends BaseAdapter<BaseData> {
             linearLayout.setOnClickListener(mSearchClickListener);
         } else if (item instanceof MsgListHeadData) {
             MsgListHeadData data = (MsgListHeadData) item;
-            MsgListHeadViewHolder viewHolder = new MsgListHeadViewHolder(holder);
+            MsgListHeadViewHolder viewHolder = (MsgListHeadViewHolder) holder;
             viewHolder.mLeft.setOnClickListener(mMsgHeadLeftClickListener);
             viewHolder.mLeftBackground.setBackgroundResource(data.getLeftBackgroundResource());
             viewHolder.mLeftImg.setBackgroundResource(data.getLeftImageResource());
@@ -69,7 +66,7 @@ public class NoticeListAdapter extends BaseAdapter<BaseData> {
 
         } else if (item instanceof MsgListData) {
             MsgListData data = (MsgListData) item;
-            MsgListViewHolder viewHolder = new MsgListViewHolder(holder);
+            MsgListViewHolder viewHolder = (MsgListViewHolder) holder;
 
             UniImageHelper.displayImage(mContext, data.getAcceptHead(), viewHolder.mHead);
             viewHolder.mNick.setText(data.getAcceptNick());

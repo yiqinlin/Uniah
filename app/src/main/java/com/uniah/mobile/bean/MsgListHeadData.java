@@ -1,7 +1,12 @@
 package com.uniah.mobile.bean;
 
+import android.content.Context;
+import android.view.View;
+
 import com.uniah.mobile.R;
 import com.uniah.mobile.base.BaseData;
+import com.uniah.mobile.base.BaseViewHolder;
+import com.uniah.mobile.holder.MsgListHeadViewHolder;
 
 import java.io.Serializable;
 
@@ -26,6 +31,11 @@ public class MsgListHeadData extends BaseData implements Serializable {
     private int midCount;
     private int rightCount;
 
+
+    @Override
+    public BaseViewHolder getViewHolder(Context context, View convertView) {
+        return new MsgListHeadViewHolder(context, convertView);
+    }
 
     @Override
     public int getLayoutId() {

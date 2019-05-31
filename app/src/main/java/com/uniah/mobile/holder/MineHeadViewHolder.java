@@ -1,5 +1,7 @@
 package com.uniah.mobile.holder;
 
+import android.content.Context;
+import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -11,7 +13,7 @@ import com.uniah.mobile.layout.UniFrameLayout;
 import com.uniah.mobile.layout.UniLinearLayout;
 import com.uniah.mobile.view.UniRadiusView;
 
-public class MineHeadViewHolder {
+public class MineHeadViewHolder extends BaseViewHolder {
 
     public UniLinearLayout mMineHeadItem;
 
@@ -36,29 +38,30 @@ public class MineHeadViewHolder {
     public TextView mMidInfoTitle;
     public TextView mRightInfoTitle;
 
-    public MineHeadViewHolder(BaseViewHolder holder) {
+    public MineHeadViewHolder(Context context, View convertView) {
+        super(context, convertView);
 
-        mMineHeadItem = holder.findViewById(R.id.mine_head_item);
+        mMineHeadItem = convertView.findViewById(R.id.mine_head_item);
 
-        mMineInfo = holder.findViewById(R.id.mine_head_user_layout);
+        mMineInfo = convertView.findViewById(R.id.mine_head_user_layout);
 
-        mHead = holder.findViewById(R.id.mine_head_user_head);
-        mNick = holder.findViewById(R.id.mine_head_user_nick);
-        mSlogan = holder.findViewById(R.id.mine_head_user_slogan);
+        mHead = convertView.findViewById(R.id.mine_head_user_head);
+        mNick = convertView.findViewById(R.id.mine_head_user_nick);
+        mSlogan = convertView.findViewById(R.id.mine_head_user_slogan);
 
-        mBtnLayout = holder.findViewById(R.id.mine_head_btn_layout);
-        mSubBtnLayout = holder.findViewById(R.id.mine_head_btn_sub_layout);
+        mBtnLayout = convertView.findViewById(R.id.mine_head_btn_layout);
+        mSubBtnLayout = convertView.findViewById(R.id.mine_head_btn_sub_layout);
 
-        mLeftInfo = holder.findViewById(R.id.mine_head_info_left_layout);
-        mMidInfo = holder.findViewById(R.id.mine_head_info_mid_layout);
-        mRightInfo = holder.findViewById(R.id.mine_head_info_right_layout);
+        mLeftInfo = convertView.findViewById(R.id.mine_head_info_left_layout);
+        mMidInfo = convertView.findViewById(R.id.mine_head_info_mid_layout);
+        mRightInfo = convertView.findViewById(R.id.mine_head_info_right_layout);
 
-        mLeftInfoCount = holder.findViewById(R.id.mine_head_info_left_count);
-        mMidInfoCount = holder.findViewById(R.id.mine_head_info_mid_count);
-        mRightInfoCount = holder.findViewById(R.id.mine_head_info_right_count);
+        mLeftInfoCount = convertView.findViewById(R.id.mine_head_info_left_count);
+        mMidInfoCount = convertView.findViewById(R.id.mine_head_info_mid_count);
+        mRightInfoCount = convertView.findViewById(R.id.mine_head_info_right_count);
 
-        mLeftInfoTitle = holder.findViewById(R.id.mine_head_info_left_title);
-        mMidInfoTitle = holder.findViewById(R.id.mine_head_info_mid_title);
-        mRightInfoTitle = holder.findViewById(R.id.mine_head_info_right_title);
+        mLeftInfoTitle = convertView.findViewById(R.id.mine_head_info_left_title);
+        mMidInfoTitle = convertView.findViewById(R.id.mine_head_info_mid_title);
+        mRightInfoTitle = convertView.findViewById(R.id.mine_head_info_right_title);
     }
 }

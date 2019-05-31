@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.Toast;
 
+import com.uniah.mobile.R;
 import com.uniah.mobile.base.BaseAdapter;
 import com.uniah.mobile.base.BaseData;
 import com.uniah.mobile.base.BaseViewHolder;
@@ -27,26 +28,19 @@ import java.util.List;
 
 public class MineAdapter extends BaseAdapter<BaseData> {
 
-    private Context mContext;
     private Activity mActivity;
     private MineHeadViewHolder mMineHeadViewHolder;
     private MineUniViewHolder mMineUniViewHolder;
     private MineCardViewHolder mMineToolViewHolder;
     private MineCardTitleViewHolder mMineCardTitleViewHolder;
     private MineCardViewHolder mMineTeamViewHolder;
-    private int mDpRadius;
-    private int mDpElevation;
-    private float mAlpha = 0.1f;
 
 
     public MineAdapter(Context context, List<BaseData> list) {
         super(context, list);
-        this.mContext = context;
         if (mContext instanceof Activity) {
             this.mActivity = (Activity) mContext;
         }
-        mDpRadius = UniDisplayHelper.dp2px(mContext, 9);
-        mDpElevation = UniDisplayHelper.dp2px(mContext, 2);
     }
 
     @Override
@@ -66,7 +60,7 @@ public class MineAdapter extends BaseAdapter<BaseData> {
 
     private void onBindMineTeam(BaseViewHolder holder, int position, BaseData item) {
         MineTeamData data = (MineTeamData) item;
-        mMineTeamViewHolder = new MineCardViewHolder(holder);
+        mMineTeamViewHolder = (MineCardViewHolder) holder;
 
         mMineTeamViewHolder.mTitle.setText(data.getToolTitle());
 
@@ -93,7 +87,7 @@ public class MineAdapter extends BaseAdapter<BaseData> {
 
         mMineTeamViewHolder.mTitleItem.setOnClickListener(mMineTeamTitleItemClickListener);
 
-        UniImageHelper.displayImage(mContext,data.getFirstLogo(),mMineTeamViewHolder.mFirstBackground);
+        UniImageHelper.displayImage(mContext, data.getFirstLogo(), mMineTeamViewHolder.mFirstBackground);
         mMineTeamViewHolder.mFirst.setOnClickListener(mMineTeamFirstClickListener);
         mMineTeamViewHolder.mFirstImg.setVisibility(View.GONE);
         mMineTeamViewHolder.mFirstText.setText(data.getFirstName());
@@ -104,7 +98,7 @@ public class MineAdapter extends BaseAdapter<BaseData> {
             mMineTeamViewHolder.mFirstCount.setVisibility(View.GONE);
         }
 
-        UniImageHelper.displayImage(mContext,data.getSecondLogo(),mMineTeamViewHolder.mSecondBackground);
+        UniImageHelper.displayImage(mContext, data.getSecondLogo(), mMineTeamViewHolder.mSecondBackground);
         mMineTeamViewHolder.mSecond.setOnClickListener(mMineTeamSecondClickListener);
         mMineTeamViewHolder.mSecondImg.setVisibility(View.GONE);
         mMineTeamViewHolder.mSecondText.setText(data.getSecondName());
@@ -115,7 +109,7 @@ public class MineAdapter extends BaseAdapter<BaseData> {
             mMineTeamViewHolder.mSecondCount.setVisibility(View.GONE);
         }
 
-        UniImageHelper.displayImage(mContext,data.getThirdLogo(),mMineTeamViewHolder.mThirdBackground);
+        UniImageHelper.displayImage(mContext, data.getThirdLogo(), mMineTeamViewHolder.mThirdBackground);
         mMineTeamViewHolder.mThird.setOnClickListener(mMineTeamThirdClickListener);
         mMineTeamViewHolder.mThirdImg.setVisibility(View.GONE);
         mMineTeamViewHolder.mThirdText.setText(data.getThirdName());
@@ -126,7 +120,7 @@ public class MineAdapter extends BaseAdapter<BaseData> {
             mMineTeamViewHolder.mThirdCount.setVisibility(View.GONE);
         }
 
-        UniImageHelper.displayImage(mContext,data.getFourthLogo(),mMineTeamViewHolder.mFourthBackground);
+        UniImageHelper.displayImage(mContext, data.getFourthLogo(), mMineTeamViewHolder.mFourthBackground);
         mMineTeamViewHolder.mFourth.setOnClickListener(mMineTeamFourthClickListener);
         mMineTeamViewHolder.mFourthImg.setVisibility(View.GONE);
         mMineTeamViewHolder.mFourthText.setText(data.getFourthName());
@@ -190,7 +184,7 @@ public class MineAdapter extends BaseAdapter<BaseData> {
 
     private void onBindMineCardTitle(BaseViewHolder holder, int position, BaseData item) {
         MineCardTitleData data = (MineCardTitleData) item;
-        mMineCardTitleViewHolder = new MineCardTitleViewHolder(holder);
+        mMineCardTitleViewHolder = (MineCardTitleViewHolder) holder;
 
         mMineCardTitleViewHolder.mTitle.setText(data.getTitle());
         if (!UniTextHelper.isEmpty(data.getSubTitle())) {
@@ -241,7 +235,7 @@ public class MineAdapter extends BaseAdapter<BaseData> {
 
     private void onBindMineTool(BaseViewHolder holder, int position, BaseData item) {
         MineToolData data = (MineToolData) item;
-        mMineToolViewHolder = new MineCardViewHolder(holder);
+        mMineToolViewHolder = (MineCardViewHolder) holder;
 
         mMineToolViewHolder.mTitle.setText(data.getToolTitle());
 
@@ -365,7 +359,7 @@ public class MineAdapter extends BaseAdapter<BaseData> {
     private void onBindMineUni(BaseViewHolder holder, int position, BaseData item) {
 
         MineUniData data = (MineUniData) item;
-        mMineUniViewHolder = new MineUniViewHolder(holder);
+        mMineUniViewHolder = (MineUniViewHolder) holder;
 
         UniImageHelper.displayImage(mContext, data.getUniLogo(), mMineUniViewHolder.mUniLogo);
         mMineUniViewHolder.mUniName.setText(data.getUniName());
@@ -389,7 +383,7 @@ public class MineAdapter extends BaseAdapter<BaseData> {
     private void onBindMineHead(BaseViewHolder holder, int position, BaseData item) {
 
         MineHeadData data = (MineHeadData) item;
-        mMineHeadViewHolder = new MineHeadViewHolder(holder);
+        mMineHeadViewHolder = (MineHeadViewHolder) holder;
 
         UniImageHelper.displayImage(mContext, data.getUserHead(), mMineHeadViewHolder.mHead);
 

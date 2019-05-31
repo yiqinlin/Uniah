@@ -19,11 +19,8 @@ import java.util.List;
 
 public class MsgListAdapter extends BaseAdapter<BaseData> {
 
-    Context mContext;
-
     public MsgListAdapter(Context context, List<BaseData> list) {
         super(context, list);
-        this.mContext = context;
     }
 
     @Override
@@ -33,7 +30,7 @@ public class MsgListAdapter extends BaseAdapter<BaseData> {
             linearLayout.setOnClickListener(mSearchClickListener);
         } else if (item instanceof MsgListData) {
             MsgListData data = (MsgListData) item;
-            MsgListViewHolder viewHolder = new MsgListViewHolder(holder);
+            MsgListViewHolder viewHolder = (MsgListViewHolder) holder;
 
             UniImageHelper.displayImage(mContext, data.getAcceptHead(), viewHolder.mHead);
             viewHolder.mNick.setText(data.getAcceptNick());

@@ -28,11 +28,33 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="9dp" />
 
-        <com.uniah.mobile.view.UniImgBox
-            android:id="@+id/feed_item_img_box"
+        <com.uniah.mobile.view.UniRadiusView
+            android:id="@+id/feed_item_img_single"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="9dp"
+            android:background="@drawable/bg_grey"
+            android:maxHeight="300dp"
+            android:scaleType="centerInside"
+            android:visibility="gone"
+            app:uni_cornerRadius="6dp" />
+
+        <com.uniah.mobile.view.UniGridView
+            android:id="@+id/feed_item_img_grid"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="9dp" />
+            android:layout_marginBottom="9dp"
+            android:gravity="center"
+            android:horizontalSpacing="3dp"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="3dp"
+            android:visibility="gone" />
+
+        <!--<com.uniah.mobile.view.UniImgBox-->
+        <!--android:id="@+id/feed_item_img_box"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginBottom="9dp" />-->
 
         <com.uniah.mobile.layout.UniLinearLayout
             android:id="@+id/feed_item_hot"

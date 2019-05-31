@@ -1,7 +1,12 @@
 package com.uniah.mobile.bean;
 
+import android.content.Context;
+import android.view.View;
+
 import com.uniah.mobile.R;
 import com.uniah.mobile.base.BaseData;
+import com.uniah.mobile.base.BaseViewHolder;
+import com.uniah.mobile.holder.CarouseViewHolder;
 import com.uniah.mobile.util.UniDateHelper;
 
 import java.io.Serializable;
@@ -14,6 +19,11 @@ public class CarouselData extends BaseData implements Serializable {
     private Map<Integer, String> urls;
 
     public CarouselData() {
+    }
+
+    @Override
+    public BaseViewHolder getViewHolder(Context context, View convertView) {
+        return new CarouseViewHolder(context, convertView);
     }
 
     @Override

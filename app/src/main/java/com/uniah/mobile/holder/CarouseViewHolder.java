@@ -1,5 +1,6 @@
 package com.uniah.mobile.holder;
 
+import android.content.Context;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,7 +11,10 @@ import com.uniah.mobile.base.BaseViewHolder;
 import com.uniah.mobile.view.UniRadiusView;
 import com.uniah.mobile.view.UniViewPager;
 
-public class CarouseViewHolder {
+public class CarouseViewHolder extends BaseViewHolder {
+
+
+    public LayoutInflater mInflater;
 
     public UniViewPager mViewPager;
 
@@ -26,16 +30,17 @@ public class CarouseViewHolder {
     public UniRadiusView mMidCarouseImg;
     public UniRadiusView mRightCarouseImg;
 
-    public CarouseViewHolder(BaseViewHolder holder) {
+    public CarouseViewHolder(Context context, View convertView) {
+        super(context, convertView);
+        mInflater = LayoutInflater.from(context);
+        mViewPager = convertView.findViewById(R.id.carousel_viewPager);
+        mLeftIndicator = convertView.findViewById(R.id.indicator_left);
+        mMidIndicator = convertView.findViewById(R.id.indicator_mid);
+        mRightIndicator = convertView.findViewById(R.id.indicator_right);
 
-        mViewPager = holder.findViewById(R.id.carousel_viewPager);
-        mLeftIndicator = holder.findViewById(R.id.indicator_left);
-        mMidIndicator = holder.findViewById(R.id.indicator_mid);
-        mRightIndicator = holder.findViewById(R.id.indicator_right);
-
-        mLeftCarousePage = holder.inflate(R.layout.carousel_page, null);
-        mMidCarousePage = holder.inflate(R.layout.carousel_page, null);
-        mRightCarousePage = holder.inflate(R.layout.carousel_page, null);
+        mLeftCarousePage = mInflater.inflate(R.layout.carousel_page, null);
+        mMidCarousePage = mInflater.inflate(R.layout.carousel_page, null);
+        mRightCarousePage = mInflater.inflate(R.layout.carousel_page, null);
 
         mLeftCarouseImg = mLeftCarousePage.findViewById(R.id.carousel_img);
         mMidCarouseImg = mMidCarousePage.findViewById(R.id.carousel_img);

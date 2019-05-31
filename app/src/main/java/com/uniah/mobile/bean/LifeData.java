@@ -1,7 +1,12 @@
 package com.uniah.mobile.bean;
 
+import android.content.Context;
+import android.view.View;
+
 import com.uniah.mobile.R;
 import com.uniah.mobile.base.BaseData;
+import com.uniah.mobile.base.BaseViewHolder;
+import com.uniah.mobile.holder.LifeViewHolder;
 
 import java.io.Serializable;
 import java.util.Map;
@@ -13,6 +18,11 @@ public class LifeData extends BaseData implements Serializable {
     private String url;
 
     public LifeData() {
+    }
+
+    @Override
+    public BaseViewHolder getViewHolder(Context context, View convertView) {
+        return new LifeViewHolder(context, convertView);
     }
 
     @Override

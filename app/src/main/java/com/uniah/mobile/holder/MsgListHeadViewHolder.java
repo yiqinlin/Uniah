@@ -1,5 +1,6 @@
 package com.uniah.mobile.holder;
 
+import android.content.Context;
 import android.media.Image;
 import android.view.View;
 import android.widget.ImageView;
@@ -10,7 +11,7 @@ import com.uniah.mobile.R;
 import com.uniah.mobile.base.BaseViewHolder;
 import com.uniah.mobile.view.UniRadiusView;
 
-public class MsgListHeadViewHolder {
+public class MsgListHeadViewHolder extends BaseViewHolder {
 
     public LinearLayout mLeft;
     public View mLeftBackground;
@@ -30,23 +31,25 @@ public class MsgListHeadViewHolder {
     public TextView mRightText;
     public TextView mRightCount;
 
-    public MsgListHeadViewHolder(BaseViewHolder holder) {
-        mLeft = holder.findViewById(R.id.msg_list_head_left);
-        mLeftBackground = holder.findViewById(R.id.msg_list_head_left_img_bg);
-        mLeftImg = holder.findViewById(R.id.msg_list_head_left_img);
-        mLeftText = holder.findViewById(R.id.msg_list_head_left_text);
-        mLeftCount = holder.findViewById(R.id.msg_list_head_left_count);
+    public MsgListHeadViewHolder(Context context, View convertView) {
+        super(context, convertView);
 
-        mMid = holder.findViewById(R.id.msg_list_head_mid);
-        mMidBackground = holder.findViewById(R.id.msg_list_head_mid_img_bg);
-        mMidImg = holder.findViewById(R.id.msg_list_head_mid_img);
-        mMidText = holder.findViewById(R.id.msg_list_head_mid_text);
-        mMidCount = holder.findViewById(R.id.msg_list_head_mid_count);
+        mLeft = convertView.findViewById(R.id.msg_list_head_left);
+        mLeftBackground = convertView.findViewById(R.id.msg_list_head_left_img_bg);
+        mLeftImg = convertView.findViewById(R.id.msg_list_head_left_img);
+        mLeftText = convertView.findViewById(R.id.msg_list_head_left_text);
+        mLeftCount = convertView.findViewById(R.id.msg_list_head_left_count);
 
-        mRight = holder.findViewById(R.id.msg_list_head_right);
-        mRightBackground = holder.findViewById(R.id.msg_list_head_right_img_bg);
-        mRightImg = holder.findViewById(R.id.msg_list_head_right_img);
-        mRightText = holder.findViewById(R.id.msg_list_head_right_text);
-        mRightCount = holder.findViewById(R.id.msg_list_head_right_count);
+        mMid = convertView.findViewById(R.id.msg_list_head_mid);
+        mMidBackground = convertView.findViewById(R.id.msg_list_head_mid_img_bg);
+        mMidImg = convertView.findViewById(R.id.msg_list_head_mid_img);
+        mMidText = convertView.findViewById(R.id.msg_list_head_mid_text);
+        mMidCount = convertView.findViewById(R.id.msg_list_head_mid_count);
+
+        mRight = convertView.findViewById(R.id.msg_list_head_right);
+        mRightBackground = convertView.findViewById(R.id.msg_list_head_right_img_bg);
+        mRightImg = convertView.findViewById(R.id.msg_list_head_right_img);
+        mRightText = convertView.findViewById(R.id.msg_list_head_right_text);
+        mRightCount = convertView.findViewById(R.id.msg_list_head_right_count);
     }
 }

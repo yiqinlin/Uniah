@@ -1,7 +1,12 @@
 package com.uniah.mobile.bean;
 
+import android.content.Context;
+import android.view.View;
+
 import com.uniah.mobile.R;
 import com.uniah.mobile.base.BaseData;
+import com.uniah.mobile.base.BaseViewHolder;
+import com.uniah.mobile.holder.MineCardViewHolder;
 
 import java.io.Serializable;
 
@@ -35,6 +40,11 @@ public class MineToolData extends BaseData implements Serializable {
 
 
     public MineToolData() {
+    }
+
+    @Override
+    public BaseViewHolder getViewHolder(Context context, View convertView) {
+        return new MineCardViewHolder(context, convertView);
     }
 
     @Override

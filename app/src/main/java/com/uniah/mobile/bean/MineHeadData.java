@@ -1,7 +1,12 @@
 package com.uniah.mobile.bean;
 
+import android.content.Context;
+import android.view.View;
+
 import com.uniah.mobile.R;
 import com.uniah.mobile.base.BaseData;
+import com.uniah.mobile.base.BaseViewHolder;
+import com.uniah.mobile.holder.MineHeadViewHolder;
 import com.uniah.mobile.view.UniRadiusView;
 
 import java.io.Serializable;
@@ -23,6 +28,11 @@ public class MineHeadData extends BaseData implements Serializable {
     private String rightTitle;
 
     public MineHeadData() {
+    }
+
+    @Override
+    public BaseViewHolder getViewHolder(Context context, View convertView) {
+        return new MineHeadViewHolder(context, convertView);
     }
 
     @Override

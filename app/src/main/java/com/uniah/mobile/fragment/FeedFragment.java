@@ -100,9 +100,9 @@ public class FeedFragment extends BaseFragment {
         map.put(0, "http://39.108.118.215/imgs/e8381b560354c331eb03a3620e0fc483.jpg");
         map.put(1, "http://39.108.118.215/imgs/5a66d885b0dd007736133ee715540c2c.jpg");
         map.put(2, "http://39.108.118.215/imgs/d57bf3ac7284d43091f1dbeed8c08d92.jpg");
-        map.put(3, "http://39.108.118.215/imgs/d57bf3ac7284d43091f1dbeed8c08d92.jpg");
-        map.put(4, "http://39.108.118.215/imgs/d57bf3ac7284d43091f1dbeed8c08d92.jpg");
-        map.put(5, "http://39.108.118.215/imgs/d57bf3ac7284d43091f1dbeed8c08d92.jpg");
+//        map.put(3, "http://39.108.118.215/imgs/d57bf3ac7284d43091f1dbeed8c08d92.jpg");
+//        map.put(4, "http://39.108.118.215/imgs/d57bf3ac7284d43091f1dbeed8c08d92.jpg");
+//        map.put(5, "http://39.108.118.215/imgs/d57bf3ac7284d43091f1dbeed8c08d92.jpg");
         data.setFiles(map);
         data.setHotContent("小笨狗：这可真秀啊");
         data.setHotTitle("独秀");

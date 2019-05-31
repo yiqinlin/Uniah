@@ -1,7 +1,12 @@
 package com.uniah.mobile.bean;
 
+import android.content.Context;
+import android.view.View;
+
 import com.uniah.mobile.R;
 import com.uniah.mobile.base.BaseData;
+import com.uniah.mobile.base.BaseViewHolder;
+import com.uniah.mobile.holder.MsgListViewHolder;
 import com.uniah.mobile.util.UniDateHelper;
 
 import java.io.Serializable;
@@ -20,6 +25,11 @@ public class MsgListData extends BaseData implements Serializable {
     private int msgCount;
 
     public MsgListData() {
+    }
+
+    @Override
+    public BaseViewHolder getViewHolder(Context context, View convertView) {
+        return new MsgListViewHolder(context, convertView);
     }
 
     @Override

@@ -27,7 +27,7 @@ import java.util.List;
 
 public abstract class BaseAdapter<T> extends RecyclerView.Adapter<BaseViewHolder> {
     private List<T> mData;
-    private final Context mContext;
+    public final Context mContext;
     private LayoutInflater mInflater;
     private OnItemClickListener mClickListener;
     private OnItemLongClickListener mLongClickListener;
@@ -39,9 +39,9 @@ public abstract class BaseAdapter<T> extends RecyclerView.Adapter<BaseViewHolder
     }
 
     @Override
-    public BaseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-
-        final BaseViewHolder holder = new BaseViewHolder(mContext, mInflater.inflate(viewType, parent, false));
+    public BaseViewHolder onCreateViewHolder(ViewGroup parent, int position) {
+        View convertView = mInflater.inflate(getLayoutId(position), parent, false);
+        final BaseViewHolder holder = getViewHolder(position, convertView);
         if (mClickListener != null) {
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -69,8 +69,7 @@ public abstract class BaseAdapter<T> extends RecyclerView.Adapter<BaseViewHolder
 
     @Override
     public int getItemViewType(int position) {
-        BaseData data = (BaseData) getItem(position);
-        return (data != null) ? data.getLayoutId() : -1;
+        return position;
     }
 
     @Override
@@ -78,8 +77,18 @@ public abstract class BaseAdapter<T> extends RecyclerView.Adapter<BaseViewHolder
         return mData.size();
     }
 
-    abstract public void convert(BaseViewHolder holder, int position, T item);
 
+    private BaseViewHolder getViewHolder(int position, View convertView) {
+        BaseData data = (BaseData) getItem(position);
+        return data.getViewHolder(mContext, convertView);
+    }
+
+    private int getLayoutId(int position) {
+        BaseData data = (BaseData) getItem(position);
+        return (data != null) ? data.getLayoutId() : -1;
+    }
+
+    public abstract void convert(BaseViewHolder holder, int position, T item);
 
     public void setData(List<T> list) {
         mData = (list != null) ? list : new ArrayList<T>();

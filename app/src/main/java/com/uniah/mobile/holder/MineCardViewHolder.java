@@ -1,5 +1,6 @@
 package com.uniah.mobile.holder;
 
+import android.content.Context;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -10,7 +11,7 @@ import com.uniah.mobile.base.BaseViewHolder;
 import com.uniah.mobile.layout.UniFrameLayout;
 import com.uniah.mobile.view.UniRadiusView;
 
-public class MineCardViewHolder {
+public class MineCardViewHolder extends BaseViewHolder {
 
     public LinearLayout mTitleItem;
     public TextView mTitle;
@@ -43,36 +44,37 @@ public class MineCardViewHolder {
     public TextView mFourthText;
     public TextView mFourthCount;
 
-    public MineCardViewHolder(BaseViewHolder holder) {
+    public MineCardViewHolder(Context context, View convertView) {
+        super(context, convertView);
 
-        mTitleItem = holder.findViewById(R.id.card_title_item);
-        mTitle = holder.findViewById(R.id.card_title_text);
-        mSubTitle = holder.findViewById(R.id.card_title_sub_title);
-        mMoreBtn = holder.findViewById(R.id.card_title_btn_layout);
-        mBackBtn = holder.findViewById(R.id.card_title_btn_sub_layout);
+        mTitleItem = convertView.findViewById(R.id.card_title_item);
+        mTitle = convertView.findViewById(R.id.card_title_text);
+        mSubTitle = convertView.findViewById(R.id.card_title_sub_title);
+        mMoreBtn = convertView.findViewById(R.id.card_title_btn_layout);
+        mBackBtn = convertView.findViewById(R.id.card_title_btn_sub_layout);
 
-        mFirst = holder.findViewById(R.id.card_part_four_first);
-        mFirstBackground = holder.findViewById(R.id.card_part_four_first_img_bg);
-        mFirstImg = holder.findViewById(R.id.card_part_four_first_img);
-        mFirstText = holder.findViewById(R.id.card_part_four_first_text);
-        mFirstCount = holder.findViewById(R.id.card_part_four_first_count);
+        mFirst = convertView.findViewById(R.id.card_part_four_first);
+        mFirstBackground = convertView.findViewById(R.id.card_part_four_first_img_bg);
+        mFirstImg = convertView.findViewById(R.id.card_part_four_first_img);
+        mFirstText = convertView.findViewById(R.id.card_part_four_first_text);
+        mFirstCount = convertView.findViewById(R.id.card_part_four_first_count);
 
-        mSecond = holder.findViewById(R.id.card_part_four_second);
-        mSecondBackground = holder.findViewById(R.id.card_part_four_second_img_bg);
-        mSecondImg = holder.findViewById(R.id.card_part_four_second_img);
-        mSecondText = holder.findViewById(R.id.card_part_four_second_text);
-        mSecondCount = holder.findViewById(R.id.card_part_four_second_count);
+        mSecond = convertView.findViewById(R.id.card_part_four_second);
+        mSecondBackground = convertView.findViewById(R.id.card_part_four_second_img_bg);
+        mSecondImg = convertView.findViewById(R.id.card_part_four_second_img);
+        mSecondText = convertView.findViewById(R.id.card_part_four_second_text);
+        mSecondCount = convertView.findViewById(R.id.card_part_four_second_count);
 
-        mThird = holder.findViewById(R.id.card_part_four_third);
-        mThirdBackground = holder.findViewById(R.id.card_part_four_third_img_bg);
-        mThirdImg = holder.findViewById(R.id.card_part_four_third_img);
-        mThirdText = holder.findViewById(R.id.card_part_four_third_text);
-        mThirdCount = holder.findViewById(R.id.card_part_four_third_count);
+        mThird = convertView.findViewById(R.id.card_part_four_third);
+        mThirdBackground = convertView.findViewById(R.id.card_part_four_third_img_bg);
+        mThirdImg = convertView.findViewById(R.id.card_part_four_third_img);
+        mThirdText = convertView.findViewById(R.id.card_part_four_third_text);
+        mThirdCount = convertView.findViewById(R.id.card_part_four_third_count);
 
-        mFourth = holder.findViewById(R.id.card_part_four_fourth);
-        mFourthBackground = holder.findViewById(R.id.card_part_four_fourth_img_bg);
-        mFourthImg = holder.findViewById(R.id.card_part_four_fourth_img);
-        mFourthText = holder.findViewById(R.id.card_part_four_fourth_text);
-        mFourthCount = holder.findViewById(R.id.card_part_four_fourth_count);
+        mFourth = convertView.findViewById(R.id.card_part_four_fourth);
+        mFourthBackground = convertView.findViewById(R.id.card_part_four_fourth_img_bg);
+        mFourthImg = convertView.findViewById(R.id.card_part_four_fourth_img);
+        mFourthText = convertView.findViewById(R.id.card_part_four_fourth_text);
+        mFourthCount = convertView.findViewById(R.id.card_part_four_fourth_count);
     }
 }

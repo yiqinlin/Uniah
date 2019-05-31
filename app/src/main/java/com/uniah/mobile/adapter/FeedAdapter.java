@@ -2,34 +2,35 @@ package com.uniah.mobile.adapter;
 
 import android.content.Context;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.uniah.mobile.R;
 import com.uniah.mobile.base.BaseAdapter;
 import com.uniah.mobile.base.BaseData;
 import com.uniah.mobile.base.BaseViewHolder;
 import com.uniah.mobile.bean.FeedData;
+import com.uniah.mobile.bean.FeedGridData;
 import com.uniah.mobile.holder.FeedViewHolder;
-import com.uniah.mobile.util.UniDisplayHelper;
 import com.uniah.mobile.util.UniImageHelper;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class FeedAdapter extends BaseAdapter<BaseData> {
 
-    Context mContext;
-    FeedViewHolder viewHolder;
-    FeedData data;
-    int pos = -1;
+    private FeedViewHolder viewHolder;
+    private FeedData data;
+    private int pos = -1;
 
     public FeedAdapter(Context context, List<BaseData> list) {
         super(context, list);
-        this.mContext = context;
     }
 
     @Override
     public void convert(BaseViewHolder holder, int position, BaseData item) {
         if (item instanceof FeedData) {
-            viewHolder = new FeedViewHolder(holder);
+            viewHolder = (FeedViewHolder) holder;
             pos = position;
             data = (FeedData) item;
 
@@ -40,7 +41,8 @@ public class FeedAdapter extends BaseAdapter<BaseData> {
             viewHolder.mMore.setVisibility(View.VISIBLE);
             viewHolder.mMore.setOnClickListener(mMoreClickListener);
             viewHolder.mContent.setText(data.getFeedContent());
-            viewHolder.mImgBox.setImgLayout(data.getImgList());
+
+            imgSet();
 
             viewHolder.mHot.setVisibility(data.hasHot() ? View.VISIBLE : View.GONE);
             viewHolder.mHotLike.setOnClickListener(mHotLikeClickListener);
@@ -55,6 +57,55 @@ public class FeedAdapter extends BaseAdapter<BaseData> {
             viewHolder.mLike.setOnClickListener(mLikeClickListener);
             viewHolder.mLikeImg.setActivated(data.isFeedLike());
             viewHolder.mLikeCount.setText(String.valueOf(data.getLikeCount()));
+
+        }
+    }
+
+
+    private void imgSet() {
+        int size = data.getImgList().size();
+        int numColumns = 0;
+
+        if (size == 2 || size == 4) {
+            numColumns = 2;
+        } else if (size > 1) {
+            numColumns = 3;
+        }
+
+        viewHolder.mGridView.setVisibility(numColumns == 0 ? View.GONE : View.VISIBLE);
+        viewHolder.mSingleImg.setVisibility(numColumns == 0 ? View.VISIBLE : View.GONE);
+
+        if (numColumns == 0) {
+            UniImageHelper.displayImage(mContext, data.getImgList().get(0), viewHolder.mSingleImg);
+        } else {
+            FeedGridAdapter gridAdapter = new FeedGridAdapter(mContext, new ArrayList<BaseData>(), numColumns);
+            for (String imgUrl : data.getImgList()) {
+                FeedGridData gridData = new FeedGridData();
+                gridData.setImgUrl(imgUrl);
+                gridAdapter.add(gridData);
+            }
+            gridAdapter.setImgList(data.getImgList());
+
+
+//            Transferee transferee = Transferee.getDefault(mContext);
+//            TransferConfig config = TransferConfig.build()
+//                    .setSourceImageList(data.getImgList())
+//                    .setProgressIndicator(new ProgressPieIndicator())
+//                    .setIndexIndicator(new NumberIndexIndicator())
+//                    .setJustLoadHitImage(true)
+//                    .setOnLongClickListener(new Transferee.OnTransfereeLongClickListener() {
+//                        @Override
+//                        public void onLongClick(ImageView imageView, int pos) {
+//                            //saveImageByUniversal(imageView);
+//                        }
+//                    })
+//                    .bindListView(viewHolder.mGridView, R.id.feed_grid_img);
+//
+//            gridAdapter.setTransferee(transferee);
+//            gridAdapter.setConfig(config);
+
+            viewHolder.mGridView.setNumColumns(numColumns);
+            viewHolder.mGridView.setAdapter(gridAdapter);
         }
     }
 

@@ -1,5 +1,8 @@
 package com.uniah.mobile.holder;
 
+import android.content.Context;
+import android.view.View;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -11,7 +14,7 @@ import com.uniah.mobile.layout.UniLinearLayout;
 import com.uniah.mobile.view.UniImgBox;
 import com.uniah.mobile.view.UniRadiusView;
 
-public class FeedViewHolder{
+public class FeedViewHolder extends BaseViewHolder {
 
     public UniLinearLayout mItem;
     public UniRadiusView mHead;
@@ -23,6 +26,9 @@ public class FeedViewHolder{
 
     public TextView mContent;
     public UniImgBox mImgBox;
+
+    public GridView mGridView;
+    public UniRadiusView mSingleImg;
 
     public UniLinearLayout mHot;
     public TextView mHotTitle;
@@ -39,33 +45,37 @@ public class FeedViewHolder{
     public ImageView mLikeImg;
     public TextView mLikeCount;
 
-    public FeedViewHolder(BaseViewHolder holder) {
-        mItem = holder.findViewById(R.id.feed_item);
+    public FeedViewHolder(Context context, View convertView) {
+        super(context, convertView);
 
-        mHead = holder.findViewById(R.id.user_info_title_head);
-        mNick = holder.findViewById(R.id.user_info_title_nick);
-        mBadge = holder.findViewById(R.id.user_info_title_badge);
-        mTime = holder.findViewById(R.id.user_info_title_time);
-        mUni = holder.findViewById(R.id.user_info_title_uni);
-        mMore = holder.findViewById(R.id.user_info_title_more);
+        mItem = convertView.findViewById(R.id.feed_item);
 
-        mContent = holder.findViewById(R.id.feed_item_content);
-        mImgBox = holder.findViewById(R.id.feed_item_img_box);
+        mHead = convertView.findViewById(R.id.user_info_title_head);
+        mNick = convertView.findViewById(R.id.user_info_title_nick);
+        mBadge = convertView.findViewById(R.id.user_info_title_badge);
+        mTime = convertView.findViewById(R.id.user_info_title_time);
+        mUni = convertView.findViewById(R.id.user_info_title_uni);
+        mMore = convertView.findViewById(R.id.user_info_title_more);
 
-        mHot = holder.findViewById(R.id.feed_item_hot);
-        mHotTitle = holder.findViewById(R.id.feed_item_hot_title);
-        mHotLike = holder.findViewById(R.id.feed_item_hot_like);
-        mHotLikeCount = holder.findViewById(R.id.feed_item_hot_like_count);
-        mHotLikeImg = holder.findViewById(R.id.feed_item_hot_like_img);
-        mHotContent = holder.findViewById(R.id.feed_item_hot_content);
+        mContent = convertView.findViewById(R.id.feed_item_content);
+        mSingleImg = convertView.findViewById(R.id.feed_item_img_single);
+        mGridView = convertView.findViewById(R.id.feed_item_img_grid);
+        //mImgBox = holder.findViewById(R.id.feed_item_img_box);
 
-        mComment = holder.findViewById(R.id.feed_item_comment);
-        mCommentImg = holder.findViewById(R.id.feed_item_comment_img);
-        mCommentCount = holder.findViewById(R.id.feed_item_comment_count);
+        mHot = convertView.findViewById(R.id.feed_item_hot);
+        mHotTitle = convertView.findViewById(R.id.feed_item_hot_title);
+        mHotLike = convertView.findViewById(R.id.feed_item_hot_like);
+        mHotLikeCount = convertView.findViewById(R.id.feed_item_hot_like_count);
+        mHotLikeImg = convertView.findViewById(R.id.feed_item_hot_like_img);
+        mHotContent = convertView.findViewById(R.id.feed_item_hot_content);
 
-        mLike = holder.findViewById(R.id.feed_item_like);
-        mLikeImg = holder.findViewById(R.id.feed_item_like_img);
-        mLikeCount = holder.findViewById(R.id.feed_item_like_count);
+        mComment = convertView.findViewById(R.id.feed_item_comment);
+        mCommentImg = convertView.findViewById(R.id.feed_item_comment_img);
+        mCommentCount = convertView.findViewById(R.id.feed_item_comment_count);
+
+        mLike = convertView.findViewById(R.id.feed_item_like);
+        mLikeImg = convertView.findViewById(R.id.feed_item_like_img);
+        mLikeCount = convertView.findViewById(R.id.feed_item_like_count);
     }
 
 }

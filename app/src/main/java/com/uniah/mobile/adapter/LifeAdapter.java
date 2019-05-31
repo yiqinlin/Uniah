@@ -5,6 +5,7 @@ import android.os.Handler;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 
+import com.uniah.mobile.R;
 import com.uniah.mobile.base.BaseAdapter;
 import com.uniah.mobile.base.BaseData;
 import com.uniah.mobile.base.BasePagerAdapter;
@@ -21,7 +22,6 @@ import java.util.List;
 
 public class LifeAdapter extends BaseAdapter<BaseData> {
 
-    private Context mContext;
     private CarouseViewHolder viewHolder;
 
     private float maxIndicatorScale = 1f;
@@ -34,14 +34,13 @@ public class LifeAdapter extends BaseAdapter<BaseData> {
 
     public LifeAdapter(Context context, List<BaseData> list) {
         super(context, list);
-        this.mContext = context;
     }
 
     @Override
     public void convert(BaseViewHolder holder, int position, BaseData item) {
         if (item instanceof CarouselData) {
             CarouselData data = (CarouselData) item;
-            viewHolder = new CarouseViewHolder(holder);
+            viewHolder = (CarouseViewHolder) holder;
 
             final List<View> viewList = new ArrayList<View>();
             viewList.add(viewHolder.mLeftCarousePage);
@@ -58,9 +57,9 @@ public class LifeAdapter extends BaseAdapter<BaseData> {
             viewHolder.mViewPager.startAutoScroll();
         } else if (item instanceof LifeData) {
             LifeData data = (LifeData) item;
-            LifeViewHolder viewHolder = new LifeViewHolder(holder);
+            LifeViewHolder viewHolder = (LifeViewHolder) holder;
 
-            UniImageHelper.displayImage(mContext,data.getImg(),viewHolder.mBackgroundImg);
+            UniImageHelper.displayImage(mContext, data.getImg(), viewHolder.mBackgroundImg);
             viewHolder.mTitle.setText(data.getTitle());
         }
     }

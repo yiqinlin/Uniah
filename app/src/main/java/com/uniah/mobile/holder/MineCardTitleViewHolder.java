@@ -1,5 +1,6 @@
 package com.uniah.mobile.holder;
 
+import android.content.Context;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -9,7 +10,7 @@ import com.uniah.mobile.base.BaseData;
 import com.uniah.mobile.base.BaseViewHolder;
 import com.uniah.mobile.layout.UniFrameLayout;
 
-public class MineCardTitleViewHolder {
+public class MineCardTitleViewHolder extends BaseViewHolder {
 
     public LinearLayout mTitleItem;
 
@@ -20,14 +21,16 @@ public class MineCardTitleViewHolder {
     public UniFrameLayout mMoreBtn;
     public UniFrameLayout mBackBtn;
 
-    public MineCardTitleViewHolder(BaseViewHolder holder) {
-        mTitleItem = holder.findViewById(R.id.mine_card_title_item);
+    public MineCardTitleViewHolder(Context context, View convertView) {
+        super(context, convertView);
 
-        mCursor = holder.findViewById(R.id.title_single_cursor);
-        mTitle = holder.findViewById(R.id.title_single_title);
-        mSubTitle = holder.findViewById(R.id.title_single_sub_title);
+        mTitleItem = convertView.findViewById(R.id.mine_card_title_item);
 
-        mMoreBtn = holder.findViewById(R.id.title_single_btn_layout);
-        mBackBtn = holder.findViewById(R.id.title_single_btn_sub_layout);
+        mCursor = convertView.findViewById(R.id.title_single_cursor);
+        mTitle = convertView.findViewById(R.id.title_single_title);
+        mSubTitle = convertView.findViewById(R.id.title_single_sub_title);
+
+        mMoreBtn = convertView.findViewById(R.id.title_single_btn_layout);
+        mBackBtn = convertView.findViewById(R.id.title_single_btn_sub_layout);
     }
 }
