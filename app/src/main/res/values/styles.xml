@@ -19,7 +19,6 @@
         <item name="uni_theme_color">@color/themePrimary</item>
 
 
-
     </style>
 
     <style name="UniPullRefreshLayout">
@@ -27,5 +26,11 @@
         <item name="uni_target_refresh_offset">72dp</item>
         <item name="uni_auto_calculate_refresh_init_offset">true</item>
         <item name="uni_auto_calculate_refresh_end_offset">true</item>
+    </style>
+
+    <style name="NoFrameNoDim_Dialog" parent="android:Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
     </style>
 </resources>

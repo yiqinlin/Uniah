@@ -6,20 +6,18 @@ import android.view.View;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.Toast;
 
-import com.uniah.mobile.R;
 import com.uniah.mobile.base.BaseAdapter;
 import com.uniah.mobile.base.BaseData;
 import com.uniah.mobile.base.BaseViewHolder;
-import com.uniah.mobile.bean.MineCardTitleData;
+import com.uniah.mobile.bean.CardTitleData;
 import com.uniah.mobile.bean.MineHeadData;
 import com.uniah.mobile.bean.MineTeamData;
 import com.uniah.mobile.bean.MineToolData;
 import com.uniah.mobile.bean.MineUniData;
-import com.uniah.mobile.holder.MineCardTitleViewHolder;
+import com.uniah.mobile.holder.CardTitleViewHolder;
 import com.uniah.mobile.holder.MineHeadViewHolder;
 import com.uniah.mobile.holder.MineCardViewHolder;
 import com.uniah.mobile.holder.MineUniViewHolder;
-import com.uniah.mobile.util.UniDisplayHelper;
 import com.uniah.mobile.util.UniImageHelper;
 import com.uniah.mobile.util.UniStatusBarHelper;
 import com.uniah.mobile.util.UniTextHelper;
@@ -32,7 +30,7 @@ public class MineAdapter extends BaseAdapter<BaseData> {
     private MineHeadViewHolder mMineHeadViewHolder;
     private MineUniViewHolder mMineUniViewHolder;
     private MineCardViewHolder mMineToolViewHolder;
-    private MineCardTitleViewHolder mMineCardTitleViewHolder;
+    private CardTitleViewHolder mCardTitleViewHolder;
     private MineCardViewHolder mMineTeamViewHolder;
 
 
@@ -51,8 +49,8 @@ public class MineAdapter extends BaseAdapter<BaseData> {
             onBindMineUni(holder, position, item);
         } else if (item instanceof MineToolData) {
             onBindMineTool(holder, position, item);
-        } else if (item instanceof MineCardTitleData) {
-            onBindMineCardTitle(holder, position, item);
+        } else if (item instanceof CardTitleData) {
+            onBindCardTitle(holder, position, item);
         } else if (item instanceof MineTeamData) {
             onBindMineTeam(holder, position, item);
         }
@@ -182,33 +180,33 @@ public class MineAdapter extends BaseAdapter<BaseData> {
     };
 
 
-    private void onBindMineCardTitle(BaseViewHolder holder, int position, BaseData item) {
-        MineCardTitleData data = (MineCardTitleData) item;
-        mMineCardTitleViewHolder = (MineCardTitleViewHolder) holder;
+    private void onBindCardTitle(BaseViewHolder holder, int position, BaseData item) {
+        CardTitleData data = (CardTitleData) item;
+        mCardTitleViewHolder = (CardTitleViewHolder) holder;
 
-        mMineCardTitleViewHolder.mTitle.setText(data.getTitle());
+        mCardTitleViewHolder.mTitle.setText(data.getTitle());
         if (!UniTextHelper.isEmpty(data.getSubTitle())) {
-            mMineCardTitleViewHolder.mSubTitle.setText(data.getSubTitle());
-            mMineCardTitleViewHolder.mSubTitle.setVisibility(View.VISIBLE);
+            mCardTitleViewHolder.mSubTitle.setText(data.getSubTitle());
+            mCardTitleViewHolder.mSubTitle.setVisibility(View.VISIBLE);
         } else {
-            mMineCardTitleViewHolder.mSubTitle.setVisibility(View.GONE);
+            mCardTitleViewHolder.mSubTitle.setVisibility(View.GONE);
         }
 
         if (data.isShowMoreBtn()) {
-            mMineCardTitleViewHolder.mMoreBtn.setOnClickListener(mMineCardTitleMoreClickListener);
-            mMineCardTitleViewHolder.mMoreBtn.setVisibility(View.VISIBLE);
+            mCardTitleViewHolder.mMoreBtn.setOnClickListener(mMineCardTitleMoreClickListener);
+            mCardTitleViewHolder.mMoreBtn.setVisibility(View.VISIBLE);
         } else {
-            mMineCardTitleViewHolder.mMoreBtn.setVisibility(View.GONE);
+            mCardTitleViewHolder.mMoreBtn.setVisibility(View.GONE);
         }
 
         if (data.isShowBackBtn()) {
-            mMineCardTitleViewHolder.mBackBtn.setOnClickListener(mMineCardTitleBackClickListener);
-            mMineCardTitleViewHolder.mBackBtn.setVisibility(View.VISIBLE);
+            mCardTitleViewHolder.mBackBtn.setOnClickListener(mMineCardTitleBackClickListener);
+            mCardTitleViewHolder.mBackBtn.setVisibility(View.VISIBLE);
         } else {
-            mMineCardTitleViewHolder.mBackBtn.setVisibility(View.GONE);
+            mCardTitleViewHolder.mBackBtn.setVisibility(View.GONE);
         }
 
-        mMineToolViewHolder.mTitleItem.setOnClickListener(mMineCardTitleItemClickListener);
+        mCardTitleViewHolder.mTitleItem.setOnClickListener(mMineCardTitleItemClickListener);
     }
 
     private View.OnClickListener mMineCardTitleItemClickListener = new View.OnClickListener() {

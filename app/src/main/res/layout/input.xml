@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:orientation="horizontal"
+    android:paddingStart="12dp"
+    android:paddingTop="8dp"
+    android:paddingEnd="12dp"
+    android:paddingBottom="8dp">
+
+    <EditText
+        android:id="@+id/edit_send"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginEnd="12dp"
+        android:layout_weight="1"
+        android:background="@drawable/bg_input"
+        android:maxLines="5"
+        android:minHeight="35dp"
+        android:paddingStart="13dp"
+        android:paddingTop="5dp"
+        android:paddingEnd="13dp"
+        android:paddingBottom="5dp"
+        android:textCursorDrawable="@drawable/cursor_edit"
+        android:textSize="15sp" />
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_gravity="bottom">
+
+        <Button
+            android:id="@+id/button_send"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center"
+            android:background="@drawable/ic_send" />
+    </FrameLayout>
+</LinearLayout>

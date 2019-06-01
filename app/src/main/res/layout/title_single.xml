@@ -17,7 +17,7 @@
             android:layout_width="4dp"
             android:layout_height="12dp"
             android:layout_gravity="center_vertical"
-            android:background="@drawable/tab_cursor" />
+            android:background="@drawable/cursor_tab" />
 
         <TextView
             android:id="@+id/title_single_title"

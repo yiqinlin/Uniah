@@ -39,7 +39,7 @@ import com.uniah.mobile.R;
  * the oval is not supported
  */
 public class UniRadiusView extends AppCompatImageView implements IQMUILayout {
-    private static final int DEFAULT_BORDER_COLOR = Color.GRAY;
+    private static final int DEFAULT_BORDER_COLOR = Color.TRANSPARENT;
 
     private QMUILayoutHelper mLayoutHelper;
     private QMUIAlphaViewHelper mAlphaViewHelper;

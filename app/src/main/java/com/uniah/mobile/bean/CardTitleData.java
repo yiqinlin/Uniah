@@ -6,11 +6,11 @@ import android.view.View;
 import com.uniah.mobile.R;
 import com.uniah.mobile.base.BaseData;
 import com.uniah.mobile.base.BaseViewHolder;
-import com.uniah.mobile.holder.MineCardTitleViewHolder;
+import com.uniah.mobile.holder.CardTitleViewHolder;
 
 import java.io.Serializable;
 
-public class MineCardTitleData extends BaseData implements Serializable {
+public class CardTitleData extends BaseData implements Serializable {
 
     private String title;
     private String subTitle;
@@ -20,12 +20,12 @@ public class MineCardTitleData extends BaseData implements Serializable {
 
     @Override
     public BaseViewHolder getViewHolder(Context context, View convertView) {
-        return new MineCardTitleViewHolder(context, convertView);
+        return new CardTitleViewHolder(context, convertView);
     }
 
     @Override
     public int getLayoutId() {
-        return R.layout.mine_card_title_item;
+        return R.layout.card_title_item;
     }
 
     public String getTitle() {

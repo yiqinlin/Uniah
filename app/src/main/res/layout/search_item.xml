@@ -13,7 +13,7 @@
         android:layout_gravity="center_vertical"
         android:layout_weight="1"
         android:gravity="center"
-        android:background="@drawable/query_bkg">
+        android:background="@drawable/bg_query">
 
         <FrameLayout
             android:layout_width="wrap_content"

@@ -5,30 +5,23 @@ import android.os.Bundle;
 import android.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.uniah.mobile.R;
-import com.uniah.mobile.adapter.FeedAdapter;
 import com.uniah.mobile.adapter.MineAdapter;
 import com.uniah.mobile.base.BaseData;
 import com.uniah.mobile.base.BaseFragment;
-import com.uniah.mobile.bean.FeedData;
-import com.uniah.mobile.bean.MineCardTitleData;
+import com.uniah.mobile.bean.CardTitleData;
 import com.uniah.mobile.bean.MineHeadData;
 import com.uniah.mobile.bean.MineTeamData;
 import com.uniah.mobile.bean.MineToolData;
 import com.uniah.mobile.bean.MineUniData;
-import com.uniah.mobile.bean.MsgListData;
-import com.uniah.mobile.bean.MsgListHeadData;
-import com.uniah.mobile.bean.SearchData;
 import com.uniah.mobile.layout.UniPullLayout;
 import com.uniah.mobile.util.UniStatusBarHelper;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -107,7 +100,7 @@ public class MineFragment extends BaseFragment {
         mAdapter.add(data2);
 
 
-        MineCardTitleData data3 = new MineCardTitleData();
+        CardTitleData data3 = new CardTitleData();
         data3.setTitle("我的卡片");
         mAdapter.add(data3);
 

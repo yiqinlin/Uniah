@@ -6,11 +6,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.uniah.mobile.R;
-import com.uniah.mobile.base.BaseData;
 import com.uniah.mobile.base.BaseViewHolder;
 import com.uniah.mobile.layout.UniFrameLayout;
 
-public class MineCardTitleViewHolder extends BaseViewHolder {
+public class CardTitleViewHolder extends BaseViewHolder {
 
     public LinearLayout mTitleItem;
 
@@ -21,10 +20,10 @@ public class MineCardTitleViewHolder extends BaseViewHolder {
     public UniFrameLayout mMoreBtn;
     public UniFrameLayout mBackBtn;
 
-    public MineCardTitleViewHolder(Context context, View convertView) {
+    public CardTitleViewHolder(Context context, View convertView) {
         super(context, convertView);
 
-        mTitleItem = convertView.findViewById(R.id.mine_card_title_item);
+        mTitleItem = convertView.findViewById(R.id.card_title_item);
 
         mCursor = convertView.findViewById(R.id.title_single_cursor);
         mTitle = convertView.findViewById(R.id.title_single_title);

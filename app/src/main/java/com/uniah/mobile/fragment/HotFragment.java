@@ -92,7 +92,7 @@ public class HotFragment extends BaseFragment {
 
         data.setHead("http://39.108.118.215/imgs/eb84d6962419be7594bd804bca2cbaa0.jpg");
         data.setNick("小笨狗");
-        data.setFeedTime("21:30");
+        data.setFeedTime("2019-05-20 21:30:00");
         data.setFeedContent("这是文字加三张图的布局～");
         HashMap<Integer, String> map = new HashMap<>();
         map.put(0, "http://39.108.118.215/imgs/e8381b560354c331eb03a3620e0fc483.jpg");
