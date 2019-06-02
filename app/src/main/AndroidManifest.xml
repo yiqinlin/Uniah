@@ -64,6 +64,9 @@
 
         <activity android:name=".activity.CommentActivity" />
         <activity android:name=".activity.ReplyActivity" />
+        <activity android:name=".activity.FeedPushActivity" />
+        <activity android:name=".activity.ContactActivity" />
+        <activity android:name=".activity.NoticeActivity"></activity>
     </application>
 
 </manifest>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.uniah.mobile.layout.UniLinearLayout
+        android:id="@+id/notice_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginBottom="4dp"
+        android:background="@android:color/white"
+        android:orientation="vertical"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        app:uni_radius="9dp"
+        app:uni_shadowAlpha="0.1"
+        app:uni_shadowElevation="2dp">
+
+        <include layout="@layout/user_info_title" />
+
+        <TextView
+            android:id="@+id/notice_item_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="9dp"
+            android:letterSpacing="0.03"
+            android:lineSpacingExtra="3sp"
+            android:textColor="@color/text_dark"
+            android:textSize="14sp" />
+
+
+        <LinearLayout
+            android:id="@+id/notice_item_from"
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:layout_marginBottom="9dp"
+            android:background="@drawable/bg_grey"
+            android:orientation="horizontal">
+
+            <com.uniah.mobile.view.UniRadiusView
+                android:id="@+id/notice_item_from_thumb"
+                android:layout_width="62dp"
+                android:layout_height="62dp"
+                android:layout_gravity="center_vertical"
+                app:uni_cornerRadius="6dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="9dp">
+
+                <TextView
+                    android:id="@+id/notice_item_from_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:ellipsize="end"
+                    android:letterSpacing="0.03"
+                    android:lineSpacingExtra="3sp"
+                    android:maxLines="3"
+                    android:textColor="@color/text_dark"
+                    android:textSize="13sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </com.uniah.mobile.layout.UniLinearLayout>
+</FrameLayout>

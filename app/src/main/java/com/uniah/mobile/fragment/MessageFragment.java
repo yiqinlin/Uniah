@@ -1,13 +1,16 @@
 package com.uniah.mobile.fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.uniah.mobile.R;
+import com.uniah.mobile.activity.ContactActivity;
 import com.uniah.mobile.base.BaseViewPagerAdapter;
 import com.uniah.mobile.base.BaseFragment;
 import com.uniah.mobile.view.UniSegmentTopBar;
@@ -43,24 +46,27 @@ public class MessageFragment extends BaseFragment {
     }
 
     public void initTopBar() {
+        mTopBar.setTabNum(2);
         mTopBar.setTabLeft("消息");
-        mTopBar.setTabRight("通知");
+        mTopBar.setTabMid("通知");
+        mTopBar.setTabGravity(Gravity.START);
         mTopBar.setViewPager(mViewPager);
         mTopBar.hasCursor(true);
-        mTopBar.setButtonImage(R.drawable.ic_notifications_black_24dp);
+        mTopBar.setRightButtonImage(R.drawable.ic_notifications_black_24dp);
         mTopBar.setShadow(0, 1);
-        mTopBar.setButtonClickListener(new View.OnClickListener() {
+        mTopBar.setRightButtonClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
             }
         });
 
-        mTopBar.setSubButtonImage(R.drawable.ic_notifications_black_24dp);
-        mTopBar.setOnSubButtonClickListener(new View.OnClickListener() {
+        mTopBar.setRightSubButtonImage(R.drawable.ic_notifications_black_24dp);
+        mTopBar.setOnRightSubButtonClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(getActivity(), ContactActivity.class);
+                startActivity(intent);
             }
         });
 

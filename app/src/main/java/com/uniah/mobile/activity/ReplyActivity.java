@@ -84,7 +84,6 @@ public class ReplyActivity extends AppCompatActivity {
 
     public void initTopBar() {
         mTopBar.setTitle("详情");
-        mTopBar.setShadow(0, 0);
         mTopBar.setLeftButtonImage(R.drawable.ic_home_black_24dp);
         mTopBar.setOnLeftButtonClickListener(new View.OnClickListener() {
             @Override

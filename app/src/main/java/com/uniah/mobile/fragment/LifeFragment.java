@@ -6,17 +6,16 @@ import android.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.uniah.mobile.R;
-import com.uniah.mobile.adapter.FeedAdapter;
 import com.uniah.mobile.adapter.LifeAdapter;
 import com.uniah.mobile.base.BaseData;
 import com.uniah.mobile.base.BaseFragment;
 import com.uniah.mobile.bean.CarouselData;
-import com.uniah.mobile.bean.FeedData;
 import com.uniah.mobile.bean.LifeData;
 import com.uniah.mobile.layout.UniPullLayout;
 import com.uniah.mobile.view.UniSegmentTopBar;
@@ -89,19 +88,21 @@ public class LifeFragment extends BaseFragment {
     }
 
     public void initTopBar() {
+        mTopBar.setTabNum(1);
         mTopBar.setTabLeft("生活");
+        mTopBar.setTabGravity(Gravity.START);
         mTopBar.hasCursor(false);
-        mTopBar.setButtonImage(R.drawable.ic_notifications_black_24dp);
+        mTopBar.setRightButtonImage(R.drawable.ic_notifications_black_24dp);
         mTopBar.setShadow(0, 0);
-        mTopBar.setButtonClickListener(new View.OnClickListener() {
+        mTopBar.setRightButtonClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
             }
         });
 
-        mTopBar.setSubButtonImage(R.drawable.ic_notifications_black_24dp);
-        mTopBar.setOnSubButtonClickListener(new View.OnClickListener() {
+        mTopBar.setRightSubButtonImage(R.drawable.ic_notifications_black_24dp);
+        mTopBar.setOnRightSubButtonClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 

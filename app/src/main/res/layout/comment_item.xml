@@ -87,7 +87,7 @@
                 android:id="@+id/comment_item_content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:letterSpacing="0.05"
+                android:letterSpacing="0.03"
                 android:lineSpacingExtra="3sp"
                 android:layout_marginTop="8dp"
                 android:textColor="@color/text_dark"

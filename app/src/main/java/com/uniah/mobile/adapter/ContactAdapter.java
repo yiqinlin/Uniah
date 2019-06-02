@@ -4,25 +4,30 @@ import android.content.Context;
 import android.content.Intent;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.uniah.mobile.R;
 import com.uniah.mobile.activity.LauncherActivity;
-import com.uniah.mobile.activity.NoticeActivity;
 import com.uniah.mobile.base.BaseAdapter;
 import com.uniah.mobile.base.BaseData;
 import com.uniah.mobile.base.BaseViewHolder;
+import com.uniah.mobile.bean.HintData;
 import com.uniah.mobile.bean.MsgListData;
 import com.uniah.mobile.bean.MsgListHeadData;
 import com.uniah.mobile.bean.SearchData;
+import com.uniah.mobile.bean.UserInfoData;
+import com.uniah.mobile.holder.HintViewHolder;
 import com.uniah.mobile.holder.MsgListHeadViewHolder;
 import com.uniah.mobile.holder.MsgListViewHolder;
+import com.uniah.mobile.holder.UserInfoViewHolder;
 import com.uniah.mobile.util.UniImageHelper;
+import com.uniah.mobile.util.UniTextHelper;
 
 import java.util.List;
 
-public class NoticeListAdapter extends BaseAdapter<BaseData> {
+public class ContactAdapter extends BaseAdapter<BaseData> {
 
-    public NoticeListAdapter(Context context, List<BaseData> list) {
+    public ContactAdapter(Context context, List<BaseData> list) {
         super(context, list);
     }
 
@@ -79,8 +84,40 @@ public class NoticeListAdapter extends BaseAdapter<BaseData> {
             } else {
                 viewHolder.mCount.setVisibility(View.GONE);
             }
+        } else if (item instanceof HintData) {
+            HintData data = (HintData) item;
+            HintViewHolder viewHolder = (HintViewHolder) holder;
+            viewHolder.mHintText.setText(UniTextHelper.isEmpty(data.getHint()) ? "" : data.getHint());
+        } else if (item instanceof UserInfoData) {
+            UserInfoData data = (UserInfoData) item;
+            UserInfoViewHolder viewHolder = (UserInfoViewHolder) holder;
+
+            UniImageHelper.displayImage(mContext, data.getHead(), viewHolder.mHead);
+
+            viewHolder.mNick.setText(data.getName());
+            if (!UniTextHelper.isEmpty(data.getFlag())) {
+                viewHolder.mFlag.setText(data.getFlag());
+                viewHolder.mFlag.setVisibility(View.VISIBLE);
+            } else {
+                viewHolder.mFlag.setVisibility(View.GONE);
+            }
+            if (data.getImgId() != 0) {
+                viewHolder.mBtnImg.setBackgroundResource(data.getImgId());
+                viewHolder.mBtnLayout.setVisibility(View.VISIBLE);
+                viewHolder.mBtnLayout.setOnClickListener(mUserInfoBtnClickListener);
+            } else {
+                viewHolder.mBtnLayout.setVisibility(View.GONE);
+            }
         }
     }
+
+    private View.OnClickListener mUserInfoBtnClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Toast.makeText(mContext, "click user info btn", Toast.LENGTH_SHORT).show();
+        }
+    };
+
 
     private View.OnClickListener mSearchClickListener = new View.OnClickListener() {
         @Override
@@ -93,8 +130,7 @@ public class NoticeListAdapter extends BaseAdapter<BaseData> {
     private View.OnClickListener mMsgHeadLeftClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            Intent intent = new Intent(mContext, NoticeActivity.class);
-            intent.putExtra("noticeType",0);
+            Intent intent = new Intent(mContext, LauncherActivity.class);
             mContext.startActivity(intent);
         }
     };
@@ -102,8 +138,7 @@ public class NoticeListAdapter extends BaseAdapter<BaseData> {
     private View.OnClickListener mMsgHeadMidClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            Intent intent = new Intent(mContext, NoticeActivity.class);
-            intent.putExtra("noticeType",1);
+            Intent intent = new Intent(mContext, LauncherActivity.class);
             mContext.startActivity(intent);
         }
     };
@@ -111,8 +146,7 @@ public class NoticeListAdapter extends BaseAdapter<BaseData> {
     private View.OnClickListener mMsgHeadRightClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            Intent intent = new Intent(mContext, NoticeActivity.class);
-            intent.putExtra("noticeType",2);
+            Intent intent = new Intent(mContext, LauncherActivity.class);
             mContext.startActivity(intent);
         }
     };

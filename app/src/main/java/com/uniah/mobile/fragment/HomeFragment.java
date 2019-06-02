@@ -1,13 +1,16 @@
 package com.uniah.mobile.fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.uniah.mobile.R;
+import com.uniah.mobile.activity.FeedPushActivity;
 import com.uniah.mobile.base.BaseViewPagerAdapter;
 import com.uniah.mobile.base.BaseFragment;
 import com.uniah.mobile.view.UniSegmentTopBar;
@@ -47,38 +50,45 @@ public class HomeFragment extends BaseFragment {
     }
 
     public void initTopBar() {
+        mTopBar.setTabNum(2);
         mTopBar.setTabLeft("趣趣");
-        mTopBar.setTabRight("秀儿");
+        mTopBar.setTabMid("秀儿");
+        mTopBar.setTabGravity(Gravity.START);
         mTopBar.setViewPager(mViewPager);
         mTopBar.hasCursor(true);
-        mTopBar.setButtonImage(R.drawable.ic_notifications_black_24dp);
-        mTopBar.setButtonClickListener(new View.OnClickListener() {
+        mTopBar.setRightButtonImage(R.drawable.ic_notifications_black_24dp);
+        mTopBar.setRightButtonClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
             }
         });
 
-        mTopBar.setSubButtonImage(R.drawable.ic_notifications_black_24dp);
-        mTopBar.setOnSubButtonClickListener(new View.OnClickListener() {
+        mTopBar.setRightSubButtonImage(R.drawable.ic_notifications_black_24dp);
+        mTopBar.setOnRightSubButtonClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(getActivity(), FeedPushActivity.class);
+                startActivity(intent);
             }
         });
 
         mTopBar.setOnTabClickListener(new UniSegmentTopBar.OnTabClickListener() {
             @Override
-            public void onTabSelected(int index, View v) {}
+            public void onTabSelected(int index, View v) {
+            }
 
             @Override
-            public void onTabUnselected(int index, View v) {}
+            public void onTabUnselected(int index, View v) {
+            }
 
             @Override
-            public void onTabReselected(int index, View v) {}
+            public void onTabReselected(int index, View v) {
+            }
 
             @Override
-            public void onDoubleTap(int index, View v) {}
+            public void onDoubleTap(int index, View v) {
+            }
         });
     }
 }

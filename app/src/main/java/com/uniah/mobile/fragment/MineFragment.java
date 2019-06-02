@@ -87,11 +87,6 @@ public class MineFragment extends BaseFragment {
         data2.setThirdImageResource(R.drawable.ic_home_black_24dp);
         data2.setFourthImageResource(R.drawable.ic_home_black_24dp);
 
-        data2.setFirstBackgroundResource(R.color.themePrimary);
-        data2.setSecondBackgroundResource(R.color.themePrimary);
-        data2.setThirdBackgroundResource(R.color.themePrimary);
-        data2.setFourthBackgroundResource(R.color.themePrimary);
-
         data2.setFirstName("我的赞");
         data2.setSecondName("我的评论");
         data2.setThirdName("收藏");

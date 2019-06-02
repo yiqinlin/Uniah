@@ -19,9 +19,9 @@ public class MsgListHeadData extends BaseData implements Serializable {
     private String midName;
     private String rightName;
 
-    private int leftBackgroundResource;
-    private int midBackgroundResource;
-    private int rightBackgroundResource;
+    private int leftBackgroundResource = R.drawable.bg_circle_green;
+    private int midBackgroundResource = R.drawable.bg_circle_yellow;
+    private int rightBackgroundResource = R.drawable.bg_circle_blue;
 
     private int leftImageResource;
     private int midImageResource;

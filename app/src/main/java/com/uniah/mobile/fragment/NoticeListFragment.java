@@ -1,6 +1,7 @@
 package com.uniah.mobile.fragment;
 
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -35,6 +36,7 @@ public class NoticeListFragment extends BaseFragment {
     private void initView(View view) {
         mRecyclerView = view.findViewById(R.id.pull_list_recycleView);
         mPullRefreshLayout = view.findViewById(R.id.pull_list_refresh_layout);
+        mPullRefreshLayout.setBackgroundColor(Color.WHITE);
 
         mAdapter = new NoticeListAdapter(getActivity(), new ArrayList<BaseData>());
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
@@ -64,35 +66,11 @@ public class NoticeListFragment extends BaseFragment {
             }
         });
 
-        mPullRefreshLayout.setOnPullLoadListener(new UniPullLayout.OnPullLoadListener() {
-            @Override
-            public void onMoveTarget(int offset) {
-            }
-
-            @Override
-            public void onMoveLoadView(int offset) {
-            }
-
-            @Override
-            public void onLoad() {
-                mPullRefreshLayout.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        mPullRefreshLayout.finishLoadDelay("加载成功");
-                    }
-                }, 2000);
-            }
-        });
-
         MsgListHeadData data = new MsgListHeadData();
 
         data.setLeftImageResource(R.drawable.ic_home_black_24dp);
         data.setMidImageResource(R.drawable.ic_home_black_24dp);
         data.setRightImageResource(R.drawable.ic_home_black_24dp);
-
-        data.setLeftBackgroundResource(R.color.themePrimary);
-        data.setMidBackgroundResource(R.color.themePrimary);
-        data.setRightBackgroundResource(R.color.themePrimary);
 
         data.setLeftName("点赞");
         data.setMidName("评论");

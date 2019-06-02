@@ -20,10 +20,10 @@ public class MineToolData extends BaseData implements Serializable {
     private String thirdName;
     private String fourthName;
 
-    private int firstBackgroundResource;
-    private int secondBackgroundResource;
-    private int thirdBackgroundResource;
-    private int fourthBackgroundResource;
+    private int firstBackgroundResource = R.drawable.bg_circle_green;
+    private int secondBackgroundResource = R.drawable.bg_circle_yellow;
+    private int thirdBackgroundResource = R.drawable.bg_circle_blue;
+    private int fourthBackgroundResource = R.drawable.bg_circle_red;
 
     private int firstImageResource;
     private int secondImageResource;

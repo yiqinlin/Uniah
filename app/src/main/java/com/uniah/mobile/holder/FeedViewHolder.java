@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.View;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.uniah.mobile.R;
@@ -37,7 +38,7 @@ public class FeedViewHolder extends BaseViewHolder {
     public GridView mGridView;
     public UniRadiusView mSingleImg;
 
-    public UniLinearLayout mHot;
+    public LinearLayout mHot;
     public TextView mHotTitle;
     public UniFrameLayout mHotLike;
     public TextView mHotLikeCount;

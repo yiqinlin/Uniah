@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Space;
@@ -21,7 +22,6 @@ import com.uniah.mobile.R;
 import com.uniah.mobile.layout.UniFrameLayout;
 import com.uniah.mobile.util.UniColorHelper;
 import com.uniah.mobile.util.UniDisplayHelper;
-import com.uniah.mobile.util.UniNotchHelper;
 import com.uniah.mobile.util.UniStatusBarHelper;
 
 public class UniSegmentTopBar extends UniFrameLayout {
@@ -33,6 +33,8 @@ public class UniSegmentTopBar extends UniFrameLayout {
     private int mSelect = 0;
     private int mSelectTemp = 0;
 
+    private LinearLayout mSegmentLayout;
+    private FrameLayout mSegment;
     private TextView mTabLeftView;
     private TextView mTabMidView;
     private TextView mTabRightView;
@@ -41,14 +43,21 @@ public class UniSegmentTopBar extends UniFrameLayout {
     private Space mTabRightSpace;
     private View mCursor;
 
-    private ImageView mBtnSrc;
-    private UniFrameLayout mBtnLayout;
+    private ImageView mLeftBtnSrc;
+    private UniFrameLayout mLeftBtnLayout;
 
-    private ImageView mBtnSubSrc;
-    private UniFrameLayout mBtnSubLayout;
+    private ImageView mLeftSubBtnSrc;
+    private UniFrameLayout mLeftSubBtnLayout;
+
+    private ImageView mRightBtnSrc;
+    private UniFrameLayout mRightBtnLayout;
+
+    private ImageView mRightSubBtnSrc;
+    private UniFrameLayout mRightSubBtnLayout;
 
     private int mSegmentWidth;
     private int mSpaceWidth;
+    private int mCursorWidth;
 
     private boolean isShowCursor = false;
 
@@ -61,6 +70,7 @@ public class UniSegmentTopBar extends UniFrameLayout {
     private OnTabClickListener mTabClickListener;
     private GestureDetector mLeftGestureDetector;
     private GestureDetector mMidGestureDetector;
+    private GestureDetector mRightGestureDetector;
 
     public UniSegmentTopBar(@NonNull Context context) {
         this(context, null);
@@ -77,7 +87,10 @@ public class UniSegmentTopBar extends UniFrameLayout {
     }
 
     private void initView() {
-        mTopBar = (LinearLayout) LayoutInflater.from(mContext).inflate(R.layout.topbar_segment, null);
+        mTopBar = (LinearLayout) LayoutInflater.from(mContext).inflate(R.layout.topbar_segment_third, null);
+
+        mSegmentLayout = mTopBar.findViewById(R.id.tab_segment_layout);
+        mSegment = mTopBar.findViewById(R.id.tab_segment);
 
         mTabLeftView = mTopBar.findViewById(R.id.tab_left);
         mTabMidView = mTopBar.findViewById(R.id.tab_mid);
@@ -88,25 +101,26 @@ public class UniSegmentTopBar extends UniFrameLayout {
 
         mCursor = mTopBar.findViewById(R.id.tab_cursor);
 
-        mBtnSrc = mTopBar.findViewById(R.id.top_bar_btn_right_img);
-        mBtnLayout = mTopBar.findViewById(R.id.top_bar_btn_right_layout);
-        mBtnLayout.setChangeAlphaWhenPress(true);
+        mLeftBtnSrc = mTopBar.findViewById(R.id.top_bar_btn_left_img);
+        mLeftBtnLayout = mTopBar.findViewById(R.id.top_bar_btn_left_layout);
+        mLeftBtnLayout.setChangeAlphaWhenPress(true);
 
-        mBtnSubSrc = mTopBar.findViewById(R.id.top_bar_btn_right_sub_img);
-        mBtnSubLayout = mTopBar.findViewById(R.id.top_bar_btn_right_sub_layout);
-        mBtnSubLayout.setChangeAlphaWhenPress(true);
+        mLeftSubBtnSrc = mTopBar.findViewById(R.id.top_bar_btn_left_sub_img);
+        mLeftSubBtnLayout = mTopBar.findViewById(R.id.top_bar_btn_left_sub_layout);
+        mLeftSubBtnLayout.setChangeAlphaWhenPress(true);
 
-        mSegmentWidth = UniDisplayHelper.dp2px(mContext, 88);
-        mSpaceWidth = UniDisplayHelper.dp2px(mContext, 16);
+        mRightBtnSrc = mTopBar.findViewById(R.id.top_bar_btn_right_img);
+        mRightBtnLayout = mTopBar.findViewById(R.id.top_bar_btn_right_layout);
+        mRightBtnLayout.setChangeAlphaWhenPress(true);
 
-        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams((mSegmentWidth - mSpaceWidth) / 2, ViewGroup.LayoutParams.MATCH_PARENT);
-        mCursor.setLayoutParams(params);
+        mRightSubBtnSrc = mTopBar.findViewById(R.id.top_bar_btn_right_sub_img);
+        mRightSubBtnLayout = mTopBar.findViewById(R.id.top_bar_btn_right_sub_layout);
+        mRightSubBtnLayout.setChangeAlphaWhenPress(true);
 
         hasCursor(isShowCursor);
 
         addView(mTopBar);
         setShadow();
-        onTabSelect(0);
     }
 
     @SuppressLint("ClickableViewAccessibility")
@@ -155,6 +169,29 @@ public class UniSegmentTopBar extends UniFrameLayout {
             }
         });
 
+
+        mRightGestureDetector = new GestureDetector(mContext, new GestureDetector.SimpleOnGestureListener() {
+            @Override
+            public boolean onSingleTapUp(MotionEvent e) {
+                if (mSelect != 2) {
+                    if (mViewPager != null) {
+                        mViewPager.setCurrentItem(2);
+                    }
+                } else {
+                    mTabClickListener.onTabReselected(2, mTabRightView);
+                }
+                return false;
+            }
+
+            @Override
+            public boolean onDoubleTap(MotionEvent e) {
+                if (mTabClickListener != null) {
+                    mTabClickListener.onDoubleTap(2, mTabRightView);
+                }
+                return false;
+            }
+        });
+
         mTabLeftView.setOnTouchListener(new OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -170,14 +207,63 @@ public class UniSegmentTopBar extends UniFrameLayout {
                 return true;
             }
         });
+
+        mTabRightView.setOnTouchListener(new OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                mRightGestureDetector.onTouchEvent(event);
+                return true;
+            }
+        });
     }
 
     public void setTabLeft(String text) {
         mTabLeftView.setText(text);
     }
 
-    public void setTabRight(String text) {
+    public void setTabMid(String text) {
         mTabMidView.setText(text);
+    }
+
+    public void setTabRight(String text) {
+        mTabRightView.setText(text);
+    }
+
+    public void setTabGravity(int gravity) {
+        mSegmentLayout.setGravity(gravity);
+    }
+
+    public void setTabNum(int num) {
+        mTabLeftView.setVisibility(num > 0 ? VISIBLE : GONE);
+        mTabMidView.setVisibility(num > 1 ? VISIBLE : GONE);
+        mTabRightView.setVisibility(num > 2 ? VISIBLE : GONE);
+        mTabLeftSpace.setVisibility(num > 1 ? VISIBLE : GONE);
+        mTabRightSpace.setVisibility(num > 2 ? VISIBLE : GONE);
+        switch (num) {
+            case 0:
+                mSegmentWidth = 0;
+                break;
+            case 1:
+                mSegmentWidth = UniDisplayHelper.dp2px(mContext, 36);
+                break;
+            case 2:
+                mSegmentWidth = UniDisplayHelper.dp2px(mContext, 88);
+                break;
+            case 3:
+                mSegmentWidth = UniDisplayHelper.dp2px(mContext, 140);
+                break;
+        }
+        mSpaceWidth = UniDisplayHelper.dp2px(mContext, 16);
+        mCursorWidth = (mSegmentWidth - mSpaceWidth * (num - 1)) / num;
+        mCursorWidth = mCursorWidth < 0 ? 0 : mCursorWidth;
+
+        ViewGroup.LayoutParams params = mCursor.getLayoutParams();
+        params.width = mCursorWidth;
+        mCursor.setLayoutParams(params);
+
+        ViewGroup.LayoutParams segmentParams = mSegment.getLayoutParams();
+        segmentParams.width = mSegmentWidth;
+        mSegment.setLayoutParams(segmentParams);
     }
 
     public void hasCursor(boolean isShowCursor) {
@@ -189,16 +275,17 @@ public class UniSegmentTopBar extends UniFrameLayout {
         }
     }
 
-    private void onTabSelect(int position) {
+    public void onTabSelect(int position) {
         mTabLeftView.setTextColor(position == 0 ? mTextColorSelect : mTextColorUnSelect);
         mTabMidView.setTextColor(position == 1 ? mTextColorSelect : mTextColorUnSelect);
+        mTabRightView.setTextColor(position == 2 ? mTextColorSelect : mTextColorUnSelect);
         if (isShowCursor) {
-            mCursor.setX((mSegmentWidth + mSpaceWidth) / 2 * position);
+            mCursor.setX(position * (mCursorWidth + mSpaceWidth));
         }
         if (mTabClickListener != null) {
             if (position != mSelect) {
-                mTabClickListener.onTabSelected(position, position == 0 ? mTabLeftView : mTabMidView);
-                mTabClickListener.onTabUnselected(mSelect, mSelect == 0 ? mTabLeftView : mTabMidView);
+                mTabClickListener.onTabSelected(position, position == 0 ? mTabLeftView : (position == 1 ? mTabMidView : mTabRightView));
+                mTabClickListener.onTabUnselected(mSelect, mSelect == 0 ? mTabLeftView : (mSelect == 1 ? mTabMidView : mTabRightView));
             }
         }
         mSelect = position;
@@ -217,13 +304,17 @@ public class UniSegmentTopBar extends UniFrameLayout {
 
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+                if (isShowCursor) {
+                    mCursor.setX((position + positionOffset) * (mCursorWidth + mSpaceWidth));
+                }
                 switch (position) {
                     case 0:
-                        if (isShowCursor) {
-                            mCursor.setX((mSegmentWidth + mSpaceWidth) / 2 * positionOffset);
-                        }
                         mTabLeftView.setTextColor(UniColorHelper.computeColor(mTextColorSelect, mTextColorUnSelect, positionOffset));
                         mTabMidView.setTextColor(UniColorHelper.computeColor(mTextColorSelect, mTextColorUnSelect, 1f - positionOffset));
+                        break;
+                    case 1:
+                        mTabMidView.setTextColor(UniColorHelper.computeColor(mTextColorSelect, mTextColorUnSelect, positionOffset));
+                        mTabRightView.setTextColor(UniColorHelper.computeColor(mTextColorSelect, mTextColorUnSelect, 1f - positionOffset));
                         break;
                 }
             }
@@ -295,21 +386,40 @@ public class UniSegmentTopBar extends UniFrameLayout {
         }
     }
 
-    public void setButtonImage(int drawableResId) {
-        mBtnSrc.setBackgroundResource(drawableResId);
+    public void setRightButtonImage(int drawableResId) {
+        mRightBtnSrc.setBackgroundResource(drawableResId);
     }
 
-    public void setButtonClickListener(OnClickListener clickListener) {
-        mBtnLayout.setOnClickListener(clickListener);
+    public void setRightButtonClickListener(OnClickListener clickListener) {
+        mRightBtnLayout.setOnClickListener(clickListener);
+        mRightBtnLayout.setVisibility(VISIBLE);
     }
 
-    public void setSubButtonImage(int drawableResId) {
-        mBtnSubSrc.setBackgroundResource(drawableResId);
-        mBtnSubLayout.setVisibility(VISIBLE);
+    public void setRightSubButtonImage(int drawableResId) {
+        mRightSubBtnSrc.setBackgroundResource(drawableResId);
     }
 
-    public void setOnSubButtonClickListener(OnClickListener clickListener) {
-        mBtnSubLayout.setOnClickListener(clickListener);
+    public void setOnRightSubButtonClickListener(OnClickListener clickListener) {
+        mRightSubBtnLayout.setOnClickListener(clickListener);
+        mRightSubBtnLayout.setVisibility(VISIBLE);
+    }
+
+    public void setLeftButtonImage(int drawableResId) {
+        mLeftBtnSrc.setBackgroundResource(drawableResId);
+    }
+
+    public void setLeftButtonClickListener(OnClickListener clickListener) {
+        mLeftBtnLayout.setOnClickListener(clickListener);
+        mLeftBtnLayout.setVisibility(VISIBLE);
+    }
+
+    public void setLeftSubButtonImage(int drawableResId) {
+        mLeftSubBtnSrc.setBackgroundResource(drawableResId);
+    }
+
+    public void setOnLeftSubButtonClickListener(OnClickListener clickListener) {
+        mLeftSubBtnLayout.setOnClickListener(clickListener);
+        mLeftSubBtnLayout.setVisibility(VISIBLE);
     }
 
     @Override
