@@ -2,10 +2,12 @@ package com.uniah.mobile.adapter;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.view.View;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.Toast;
 
+import com.uniah.mobile.activity.SetHomeActivity;
 import com.uniah.mobile.base.BaseAdapter;
 import com.uniah.mobile.base.BaseData;
 import com.uniah.mobile.base.BaseViewHolder;
@@ -43,6 +45,7 @@ public class MineAdapter extends BaseAdapter<BaseData> {
 
     @Override
     public void convert(BaseViewHolder holder, int position, BaseData item) {
+        setBottomMargin(holder, position);
         if (item instanceof MineHeadData) {
             onBindMineHead(holder, position, item);
         } else if (item instanceof MineUniData) {
@@ -421,7 +424,8 @@ public class MineAdapter extends BaseAdapter<BaseData> {
     private View.OnClickListener mBtnClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            Toast.makeText(mContext, "click btn", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(mContext, SetHomeActivity.class);
+            mContext.startActivity(intent);
         }
     };
 

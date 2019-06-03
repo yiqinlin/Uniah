@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 底层下滑条的样式选择器-->
+<selector xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:state_checked="true"
+        android:drawable="@drawable/switch_track_click" />
+    <item android:drawable="@drawable/switch_track" />
+</selector>

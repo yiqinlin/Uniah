@@ -29,6 +29,7 @@ public class FeedAdapter extends BaseAdapter<BaseData> {
 
     @Override
     public void convert(BaseViewHolder holder, int position, BaseData item) {
+        setBottomMargin(holder, position);
         if (item instanceof FeedData) {
             viewHolder = (FeedViewHolder) holder;
             data = (FeedData) item;

@@ -38,6 +38,7 @@ public class LifeAdapter extends BaseAdapter<BaseData> {
 
     @Override
     public void convert(BaseViewHolder holder, int position, BaseData item) {
+        setBottomMargin(holder, position);
         if (item instanceof CarouselData) {
             CarouselData data = (CarouselData) item;
             viewHolder = (CarouseViewHolder) holder;

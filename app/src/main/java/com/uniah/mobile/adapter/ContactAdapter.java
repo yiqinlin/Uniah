@@ -33,6 +33,7 @@ public class ContactAdapter extends BaseAdapter<BaseData> {
 
     @Override
     public void convert(BaseViewHolder holder, int position, BaseData item) {
+        setBottomMargin(holder, position);
         if (item instanceof SearchData) {
             LinearLayout linearLayout = holder.findViewById(R.id.search_layout);
             linearLayout.setOnClickListener(mSearchClickListener);

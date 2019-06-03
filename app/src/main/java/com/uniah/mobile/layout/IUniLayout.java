@@ -29,13 +29,15 @@ public interface IUniLayout {
     int HIDE_RADIUS_SIDE_RIGHT = 2;
     int HIDE_RADIUS_SIDE_BOTTOM = 3;
     int HIDE_RADIUS_SIDE_LEFT = 4;
+    int HIDE_RADIUS_SIDE_MID = 5;
 
     @IntDef(value = {
             HIDE_RADIUS_SIDE_NONE,
             HIDE_RADIUS_SIDE_TOP,
             HIDE_RADIUS_SIDE_RIGHT,
             HIDE_RADIUS_SIDE_BOTTOM,
-            HIDE_RADIUS_SIDE_LEFT})
+            HIDE_RADIUS_SIDE_LEFT,
+            HIDE_RADIUS_SIDE_MID})
     @Retention(RetentionPolicy.SOURCE)
     @interface HideRadiusSide {
     }

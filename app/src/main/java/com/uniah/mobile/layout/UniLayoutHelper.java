@@ -78,7 +78,8 @@ public class UniLayoutHelper implements IUniLayout {
     private Paint mClipPaint;
     private PorterDuffXfermode mMode;
     private int mRadius;
-    private @IUniLayout.HideRadiusSide int mHideRadiusSide = HIDE_RADIUS_SIDE_NONE;
+    private @IUniLayout.HideRadiusSide
+    int mHideRadiusSide = HIDE_RADIUS_SIDE_NONE;
     private float[] mRadiusArray;
     private RectF mBorderRect;
     private int mBorderColor = 0;
@@ -386,6 +387,9 @@ public class UniLayoutHelper implements IUniLayout {
                 mRadiusArray = new float[]{mRadius, mRadius, mRadius, mRadius, 0, 0, 0, 0};
             } else if (hideRadiusSide == HIDE_RADIUS_SIDE_LEFT) {
                 mRadiusArray = new float[]{0, 0, mRadius, mRadius, mRadius, mRadius, 0, 0};
+            } else if (hideRadiusSide == HIDE_RADIUS_SIDE_MID) {
+                mRadiusArray = new float[]{0, 0, 0, 0, 0, 0, 0, 0};
+                mRadius = 0;
             } else {
                 mRadiusArray = null;
             }

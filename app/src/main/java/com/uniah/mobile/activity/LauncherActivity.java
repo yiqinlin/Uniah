@@ -54,6 +54,7 @@ public class LauncherActivity extends Activity {
         Class<?> temp = LoginActivity.class;
         if (UniCookie.getBoolean(LauncherActivity.this, "login", true)) {
             temp = MainActivity.class;
+            //temp = TestActivity.class;
         }
         Intent intent = new Intent(LauncherActivity.this, temp);
         startActivity(intent);

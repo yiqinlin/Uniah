@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#FFFFFF</color>
     <color name="colorPrimaryDark">#FFFFFF</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorAccent">#FF9500</color>
 
     <color name="themePrimary">#FF9500</color>
     <color name="themePrimaryDark">#FF5E3A</color>
@@ -24,6 +24,12 @@
     <color name="tab_cursor">#FF8D08</color>
     <color name="bg_refresh">#F8F8F8</color>
     <color name="item_line">#F8F8F8</color>
+
+    <color name="switch_select">#ffb249</color>
+    <color name="switch_normal">#f0f0f0</color>
+    <color name="switch_thumb">#ffffff</color>
+    <color name="switch_shadow">#08000000</color>
+    <color name="switch_border">#f0f0f0</color>
 
 
 

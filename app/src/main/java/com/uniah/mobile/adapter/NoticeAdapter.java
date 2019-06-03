@@ -31,6 +31,7 @@ public class NoticeAdapter extends BaseAdapter<BaseData> {
 
     @Override
     public void convert(BaseViewHolder holder, int position, BaseData item) {
+        setBottomMargin(holder, position);
         if (item instanceof NoticeData) {
             NoticeData data = (NoticeData) item;
             NoticeViewHolder viewHolder = (NoticeViewHolder) holder;

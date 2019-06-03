@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.SetFeedbackActivity">
+
+    <com.uniah.mobile.view.UniCommonTopBar
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.uniah.mobile.layout.UniRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginRight="12dp"
+        android:background="@drawable/bg_card_white"
+        app:uni_radius="9dp"
+        app:uni_shadowAlpha="0.3"
+        app:uni_shadowElevation="5dp">
+
+        <EditText
+            android:id="@+id/feed_push_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@null"
+            android:gravity="top|start"
+            android:hint="期待你宝贵的意见～"
+            android:letterSpacing="0.03"
+            android:lineSpacingExtra="3sp"
+            android:minLines="12"
+            android:paddingStart="12dp"
+            android:paddingTop="12dp"
+            android:paddingEnd="12dp"
+            android:textColor="@color/text_dark"
+            android:textColorHint="@color/text_grey"
+            android:textCursorDrawable="@drawable/cursor_edit"
+            android:textSize="14sp" />
+
+    </com.uniah.mobile.layout.UniRelativeLayout>
+</LinearLayout>

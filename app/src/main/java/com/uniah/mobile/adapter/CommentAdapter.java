@@ -38,6 +38,7 @@ public class CommentAdapter extends BaseAdapter<BaseData> {
 
     @Override
     public void convert(BaseViewHolder holder, int position, BaseData item) {
+        setBottomMargin(holder, position);
         if (item instanceof DetailHeadData) {
             onBindDetailHead(holder, position, item);
         } else if (item instanceof CardTitleData) {
@@ -70,7 +71,7 @@ public class CommentAdapter extends BaseAdapter<BaseData> {
     private View.OnClickListener mCommentItemClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            switch (mCommentData.getCommentType()){
+            switch (mCommentData.getCommentType()) {
                 case 1:
                     Intent intent = new Intent(mContext, ReplyActivity.class);
                     mContext.startActivity(intent);

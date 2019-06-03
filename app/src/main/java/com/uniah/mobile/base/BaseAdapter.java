@@ -21,6 +21,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+
+import com.uniah.mobile.util.UniDisplayHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -77,6 +80,16 @@ public abstract class BaseAdapter<T> extends RecyclerView.Adapter<BaseViewHolder
         return mData.size();
     }
 
+    public void setBottomMargin(BaseViewHolder holder, int position) {
+        this.setBottomMargin(holder, position, 12);
+    }
+
+    private void setBottomMargin(BaseViewHolder holder, int position, int dpValue) {
+        if (position == getItemCount() - 1) {
+            RecyclerView.LayoutParams params = (RecyclerView.LayoutParams) holder.itemView.getLayoutParams();
+            params.setMargins(params.getMarginStart(), params.topMargin, params.getMarginEnd(), params.bottomMargin + UniDisplayHelper.dp2px(mContext, dpValue));
+        }
+    }
 
     private BaseViewHolder getViewHolder(int position, View convertView) {
         BaseData data = (BaseData) getItem(position);
