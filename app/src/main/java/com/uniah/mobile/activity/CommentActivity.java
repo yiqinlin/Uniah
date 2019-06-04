@@ -14,6 +14,7 @@ import com.uniah.mobile.bean.CardTitleData;
 import com.uniah.mobile.bean.CommentData;
 import com.uniah.mobile.bean.DetailHeadData;
 import com.uniah.mobile.layout.UniPullLayout;
+import com.uniah.mobile.util.SoftHideKeyBoardUtil;
 import com.uniah.mobile.util.UniStatusBarHelper;
 import com.uniah.mobile.view.UniCommonTopBar;
 
@@ -32,6 +33,7 @@ public class CommentActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_comment);
         UniStatusBarHelper.translucent(this);
+        SoftHideKeyBoardUtil.assistActivity(this);
 
         initView();
         initTopBar();

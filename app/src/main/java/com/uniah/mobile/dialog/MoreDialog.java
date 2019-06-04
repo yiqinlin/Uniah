@@ -5,16 +5,20 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.KeyEvent;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
 import com.uniah.mobile.R;
 import com.uniah.mobile.adapter.MoreDialogAdapter;
+import com.uniah.mobile.base.BaseAdapter;
 import com.uniah.mobile.base.BaseData;
 import com.uniah.mobile.util.UniDisplayHelper;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MoreDialog extends Dialog {
@@ -23,22 +27,22 @@ public class MoreDialog extends Dialog {
     private boolean isAllowClose = true;
     private Context mContext;
     private MoreDialogAdapter mAdapter;
-    private List<BaseData> mData;
 
-    public MoreDialog(Context context, List<BaseData> list) {
-        this(context, R.style.More_Dialog, list);
+    public MoreDialog(Context context) {
+        this(context, R.style.More_Dialog);
     }
 
-    public MoreDialog(final Context context, int theme, List<BaseData> list) {
+    public MoreDialog(final Context context, int theme) {
         super(context, theme);
         this.mContext = context;
-        this.mData = list;
 
         Window dialogWindow = this.getWindow();
         dialogWindow.setGravity(Gravity.TOP | Gravity.RIGHT);
         WindowManager.LayoutParams lp = dialogWindow.getAttributes();
         lp.y = UniDisplayHelper.dp2px(mContext, 32);
         dialogWindow.setAttributes(lp);
+
+        mAdapter = new MoreDialogAdapter(mContext, new ArrayList<BaseData>());
     }
 
     @Override
@@ -48,10 +52,12 @@ public class MoreDialog extends Dialog {
         setContentView(R.layout.dialog_more);
 
         mRecyclerView = findViewById(R.id.dialog_more_recycleView);
-
-        mAdapter = new MoreDialogAdapter(mContext, mData);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(mContext));
         mRecyclerView.setAdapter(mAdapter);
+    }
+
+    public void setData(List<BaseData> list) {
+        mAdapter.setData(list);
     }
 
     @Override

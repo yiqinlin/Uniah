@@ -8,6 +8,8 @@ import android.widget.LinearLayout.LayoutParams;
 import android.widget.Toast;
 
 import com.uniah.mobile.activity.SetHomeActivity;
+import com.uniah.mobile.activity.UserHomeActivity;
+import com.uniah.mobile.activity.UserQRCodeActivity;
 import com.uniah.mobile.base.BaseAdapter;
 import com.uniah.mobile.base.BaseData;
 import com.uniah.mobile.base.BaseViewHolder;
@@ -371,15 +373,8 @@ public class MineAdapter extends BaseAdapter<BaseData> {
             mMineUniViewHolder.mUniFlag.setVisibility(View.GONE);
         }
         mMineUniViewHolder.mUniSlogan.setText(data.getUniSlogan());
-        mMineUniViewHolder.mUniItem.setOnClickListener(mMineUniClickListener);
+        mMineUniViewHolder.mUniItem.setOnClickListener(data.getOnItemClickListener());
     }
-
-    private View.OnClickListener mMineUniClickListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            Toast.makeText(mContext, "click mine uni", Toast.LENGTH_SHORT).show();
-        }
-    };
 
     private void onBindMineHead(BaseViewHolder holder, int position, BaseData item) {
 
@@ -416,7 +411,8 @@ public class MineAdapter extends BaseAdapter<BaseData> {
     private View.OnClickListener mUserClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            Toast.makeText(mContext, "click user", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(mContext, UserHomeActivity.class);
+            mContext.startActivity(intent);
         }
     };
 
@@ -432,7 +428,8 @@ public class MineAdapter extends BaseAdapter<BaseData> {
     private View.OnClickListener mSubBtnClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            Toast.makeText(mContext, "click sub btn", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(mContext, UserQRCodeActivity.class);
+            mContext.startActivity(intent);
         }
     };
 

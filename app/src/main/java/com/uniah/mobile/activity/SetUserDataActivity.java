@@ -165,7 +165,8 @@ public class SetUserDataActivity extends AppCompatActivity {
         mTopBar.setOnRightButtonClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(SetUserDataActivity.this, UserQRCodeActivity.class);
+                startActivity(intent);
             }
         });
     }

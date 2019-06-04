@@ -13,7 +13,20 @@
         android:layout_height="wrap_content"
         android:background="@android:color/white" />
 
-    <include layout="@layout/pull_list_layout" />
+    <include
+        layout="@layout/pull_list_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
 
-    <include layout="@layout/input_item" />
+    <com.uniah.mobile.view.UniInputButton
+        android:id="@+id/input_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white" />
+
+    <include
+        android:id="@+id/input_box"
+        layout="@layout/comment_input"
+        android:visibility="gone" />
 </LinearLayout>

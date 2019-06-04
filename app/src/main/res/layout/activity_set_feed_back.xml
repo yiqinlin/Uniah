@@ -10,7 +10,8 @@
     <com.uniah.mobile.view.UniCommonTopBar
         android:id="@+id/top_bar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:background="@android:color/white" />
 
     <com.uniah.mobile.layout.UniRelativeLayout
         android:layout_width="match_parent"

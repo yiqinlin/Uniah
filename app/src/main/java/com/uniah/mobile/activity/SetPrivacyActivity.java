@@ -46,7 +46,6 @@ public class SetPrivacyActivity extends AppCompatActivity {
         mAdapter = new GroupItemAdapter(this, new ArrayList<BaseData>());
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setAdapter(mAdapter);
-
     }
 
     private void initData() {

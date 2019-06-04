@@ -1,6 +1,7 @@
 package com.uniah.mobile.fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -10,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.uniah.mobile.R;
+import com.uniah.mobile.activity.UniHomeActivity;
 import com.uniah.mobile.adapter.MineAdapter;
 import com.uniah.mobile.base.BaseData;
 import com.uniah.mobile.base.BaseFragment;
@@ -20,6 +22,7 @@ import com.uniah.mobile.bean.MineToolData;
 import com.uniah.mobile.bean.MineUniData;
 import com.uniah.mobile.layout.UniPullLayout;
 import com.uniah.mobile.util.UniStatusBarHelper;
+import com.uniah.mobile.view.UniWebView;
 
 import java.util.ArrayList;
 
@@ -74,6 +77,14 @@ public class MineFragment extends BaseFragment {
         data1.setUniLogo("http://39.108.118.215/imgs/eb84d6962419be7594bd804bca2cbaa0.jpg");
         data1.setUniName("成都东软学院");
         data1.setUniSlogan("精勤博学，学以致用");
+        data1.setOnItemClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), UniHomeActivity.class);
+                intent.putExtra("url", "http://baike.sm.cn/item/74e076bbc34a0f9aff23370dedbf675d.html");
+                startActivity(intent);
+            }
+        });
         data1.setFlag("未认证");
 
         mAdapter.add(data1);

@@ -82,7 +82,12 @@
         <activity android:name=".activity.SetNoticeActivity" />
         <activity android:name=".activity.ChatActivity" />
         <activity android:name=".activity.ChatSetActivity" />
-        <activity android:name=".activity.SearchActivity"></activity>
+        <activity android:name=".activity.SearchActivity" />
+        <activity android:name=".activity.AddFriendActivity" />
+        <activity android:name=".activity.UniHomeActivity" />
+        <activity android:name=".activity.UserQRCodeActivity" />
+        <activity android:name=".activity.WebViewActivity" />
+        <activity android:name=".activity.UserHomeActivity"></activity>
     </application>
 
 </manifest>

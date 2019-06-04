@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.UserQRCodeActivity">
+
+    <com.uniah.mobile.view.UniCommonTopBar
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.uniah.mobile.layout.UniFrameLayout
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@android:color/white"
+            android:padding="25dp"
+            android:layout_marginTop="-30dp"
+            app:uni_radius="9dp"
+            app:uni_shadowAlpha="0.1"
+            app:uni_shadowElevation="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_press_select"
+                android:orientation="horizontal">
+
+                <com.uniah.mobile.view.UniRadiusView
+                    android:id="@+id/user_qrcode_head"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@color/view_press"
+                    app:uni_isCircle="true" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="9dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="28dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/user_qrcode_nick"
+                            android:layout_width="wrap_content"
+                            android:layout_height="28dp"
+                            android:ellipsize="end"
+                            android:gravity="center_vertical"
+                            android:maxLines="1"
+                            android:textColor="@color/text_dark"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/user_qrcode_flag"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="6dp"
+                            android:background="@drawable/bg_tip_round_grey"
+                            android:ellipsize="end"
+                            android:gravity="center"
+                            android:maxLines="1"
+                            android:paddingLeft="4dp"
+                            android:paddingTop="1dp"
+                            android:paddingRight="4dp"
+                            android:paddingBottom="1dp"
+                            android:textColor="@android:color/white"
+                            android:textSize="10sp"
+                            android:visibility="gone" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="22dp"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:text="扫描二维码。咱们友你见"
+                        android:textColor="@color/text_grey"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/user_qrcode_img"
+                android:layout_width="230dp"
+                android:layout_height="230dp"
+                android:layout_marginTop="25dp"
+                android:scaleType="fitCenter" />
+
+        </com.uniah.mobile.layout.UniFrameLayout>
+
+    </FrameLayout>
+
+</LinearLayout>

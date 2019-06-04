@@ -64,7 +64,8 @@ public class HomeFragment extends BaseFragment {
         mTopBar.setRightButtonClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MoreDialog dialog = new MoreDialog(getActivity(), getMoreDialogList());
+                MoreDialog dialog = new MoreDialog(getActivity());
+                dialog.setData(getMoreDialogList(dialog));
                 dialog.show();
             }
         });

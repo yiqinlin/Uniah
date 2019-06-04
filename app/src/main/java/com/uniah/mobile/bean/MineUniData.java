@@ -9,7 +9,6 @@ import com.uniah.mobile.base.BaseViewHolder;
 import com.uniah.mobile.holder.MineUniViewHolder;
 
 import java.io.Serializable;
-import java.util.Map;
 
 public class MineUniData extends BaseData implements Serializable {
 
@@ -19,6 +18,8 @@ public class MineUniData extends BaseData implements Serializable {
     private String uniSlogan;
 
     private String flag;
+
+    private View.OnClickListener onItemClickListener;
 
 
     public MineUniData() {
@@ -72,5 +73,13 @@ public class MineUniData extends BaseData implements Serializable {
 
     public void setFlag(String flag) {
         this.flag = flag;
+    }
+
+    public View.OnClickListener getOnItemClickListener() {
+        return onItemClickListener;
+    }
+
+    public void setOnItemClickListener(View.OnClickListener onItemClickListener) {
+        this.onItemClickListener = onItemClickListener;
     }
 }

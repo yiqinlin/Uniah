@@ -239,8 +239,8 @@ public class GroupItemAdapter extends BaseAdapter<BaseData> {
         viewHolder.mBtn.setVisibility(data.isShowBtn() ? View.VISIBLE : View.GONE);
         viewHolder.mSubBtn.setVisibility(data.isShowSubBtn() ? View.VISIBLE : View.GONE);
 
-//        viewHolder.mBtn.setOnClickListener(mBtnClickListener);
-//        viewHolder.mSubBtn.setOnClickListener(mSubBtnClickListener);
+//        viewHolder.mBtn.setOnItemClickListener(mBtnClickListener);
+//        viewHolder.mSubBtn.setOnItemClickListener(mSubBtnClickListener);
 
         setItemCommon(holder, item);
     }

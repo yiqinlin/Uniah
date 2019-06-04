@@ -17,6 +17,7 @@ import com.uniah.mobile.bean.ChatUserData;
 import com.uniah.mobile.bean.CommentData;
 import com.uniah.mobile.bean.DetailHeadData;
 import com.uniah.mobile.layout.UniPullLayout;
+import com.uniah.mobile.util.SoftHideKeyBoardUtil;
 import com.uniah.mobile.util.UniStatusBarHelper;
 import com.uniah.mobile.view.UniCommonTopBar;
 
@@ -38,6 +39,7 @@ public class ChatActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
         UniStatusBarHelper.translucent(this);
+        SoftHideKeyBoardUtil.assistActivity(this);
 
         Intent intent = getIntent();
         mAcceptNick = intent.getStringExtra("acceptNick");

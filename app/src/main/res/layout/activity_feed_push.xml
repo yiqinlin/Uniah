@@ -11,38 +11,47 @@
     <com.uniah.mobile.view.UniCommonTopBar
         android:id="@+id/top_bar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <com.uniah.mobile.layout.UniRelativeLayout
-        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="12dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginRight="12dp"
-        android:background="@drawable/bg_card_white"
-        app:uni_radius="9dp"
-        app:uni_shadowAlpha="0.3"
-        app:uni_shadowElevation="5dp">
+        android:background="@android:color/white" />
 
-        <EditText
-            android:id="@+id/feed_push_content"
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <com.uniah.mobile.layout.UniRelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:background="@null"
-            android:gravity="top|start"
-            android:hint="和同学们讲讲身边的新鲜事吧～"
-            android:paddingStart="12dp"
-            android:paddingTop="12dp"
-            android:minLines="12"
-            android:paddingEnd="12dp"
-            android:letterSpacing="0.03"
-            android:lineSpacingExtra="3sp"
-            android:textColor="@color/text_dark"
-            android:textColorHint="@color/text_grey"
-            android:textCursorDrawable="@drawable/cursor_edit"
-            android:textSize="14sp" />
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="12dp"
+            android:background="@drawable/bg_card_white"
+            app:uni_radius="9dp"
+            app:uni_shadowAlpha="0.3"
+            app:uni_shadowElevation="5dp">
 
-    </com.uniah.mobile.layout.UniRelativeLayout>
+            <EditText
+                android:id="@+id/feed_push_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@null"
+                android:gravity="top|start"
+                android:hint="和同学们讲讲身边的新鲜事吧～"
+                android:letterSpacing="0.03"
+                android:lineSpacingExtra="3sp"
+                android:minLines="12"
+                android:paddingStart="12dp"
+                android:paddingTop="12dp"
+                android:paddingEnd="12dp"
+                android:textColor="@color/text_dark"
+                android:textColorHint="@color/text_grey"
+                android:textCursorDrawable="@drawable/cursor_edit"
+                android:textSize="14sp" />
+
+        </com.uniah.mobile.layout.UniRelativeLayout>
+    </FrameLayout>
+
+    <include layout="@layout/push_tool" />
 
 </LinearLayout>

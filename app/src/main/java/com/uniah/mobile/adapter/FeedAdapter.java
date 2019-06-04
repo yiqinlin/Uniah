@@ -78,12 +78,12 @@ public class FeedAdapter extends BaseAdapter<BaseData> {
             List<String> list = new ArrayList<>();
             list.add("举报");
             UniListDialog dialog = new UniListDialog.Builder(mContext)
-            .setChoiceItems(list.toArray(new String[0]), new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    Toast.makeText(mContext, "已举报", Toast.LENGTH_SHORT).show();
-                }
-            }).setCancelable(true).show();
+                    .setChoiceItems(list.toArray(new String[0]), new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            Toast.makeText(mContext, "已举报", Toast.LENGTH_SHORT).show();
+                        }
+                    }).setCancelable(true).show();
         }
     };
 
@@ -101,7 +101,8 @@ public class FeedAdapter extends BaseAdapter<BaseData> {
     private View.OnClickListener mCommentClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            Toast.makeText(mContext, "click comment", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(mContext, CommentActivity.class);
+            mContext.startActivity(intent);
         }
     };
 

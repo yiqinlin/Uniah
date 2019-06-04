@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.uniah.mobile.R;
+import com.uniah.mobile.util.SoftHideKeyBoardUtil;
 import com.uniah.mobile.util.UniStatusBarHelper;
 import com.uniah.mobile.view.UniCommonTopBar;
 
@@ -17,6 +18,7 @@ public class FeedPushActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feed_push);
         UniStatusBarHelper.translucent(this);
+        SoftHideKeyBoardUtil.assistActivity(this);
 
         initView();
         initTopBar();

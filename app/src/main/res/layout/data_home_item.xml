@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/data_home_wall"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="@color/view_press"
+        android:scaleType="centerCrop" />
+
+
+    <com.uniah.mobile.layout.UniRelativeLayout
+        android:id="@+id/data_home_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-9dp"
+        android:background="@android:color/white"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:orientation="vertical"
+        android:paddingBottom="6dp"
+        app:uni_radius="9dp"
+        app:uni_shadowAlpha="0.1"
+        app:uni_shadowElevation="2dp">
+
+        <com.uniah.mobile.view.UniRadiusView
+            android:id="@+id/data_home_head"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="9dp"
+            android:src="@color/view_press"
+            app:uni_borderColor="@android:color/white"
+            app:uni_borderWidth="4dp"
+            app:uni_isCircle="true" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_toEndOf="@id/data_home_head"
+            android:orientation="horizontal"
+            android:paddingStart="9dp"
+            android:paddingEnd="12dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/data_home_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="26dp"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:textColor="@color/text_dark"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/data_home_flag_left"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="6dp"
+                        android:background="@drawable/bg_tip_round_theme"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:paddingLeft="4dp"
+                        android:paddingTop="1dp"
+                        android:paddingRight="4dp"
+                        android:paddingBottom="1dp"
+                        android:textColor="@android:color/white"
+                        android:textSize="10sp"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/data_home_flag_right"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/bg_tip_round_orange"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:paddingLeft="4dp"
+                        android:paddingTop="1dp"
+                        android:paddingRight="4dp"
+                        android:paddingBottom="1dp"
+                        android:textColor="@android:color/white"
+                        android:textSize="10sp"
+                        android:visibility="gone" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/data_home_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/bg_round_theme"
+                android:gravity="center"
+                android:paddingLeft="7dp"
+                android:paddingTop="3dp"
+                android:paddingRight="7dp"
+                android:paddingBottom="3dp"
+                android:textColor="@android:color/white"
+                android:textSize="13sp"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/data_home_head"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/data_home_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="9dp"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:maxLines="1"
+                android:textColor="@color/text_light"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/data_home_slogan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="9dp"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:maxLines="1"
+                android:textColor="@color/text_light"
+                android:textSize="13sp" />
+
+            <LinearLayout
+                android:id="@+id/data_home_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:orientation="horizontal"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp">
+
+                <TextView
+                    android:id="@+id/data_home_info_first"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:paddingTop="7dp"
+                    android:paddingBottom="7dp"
+                    android:textColor="@color/text_normal"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/data_home_info_second"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:paddingTop="7dp"
+                    android:paddingBottom="7dp"
+                    android:textColor="@color/text_normal"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/data_home_info_third"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:paddingTop="7dp"
+                    android:paddingBottom="7dp"
+                    android:textColor="@color/text_normal"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </com.uniah.mobile.layout.UniRelativeLayout>
+</LinearLayout>
