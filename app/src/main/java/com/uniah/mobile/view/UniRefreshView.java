@@ -2,14 +2,12 @@ package com.uniah.mobile.view;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.RotateAnimation;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.uniah.mobile.R;
@@ -67,7 +65,7 @@ public class UniRefreshView extends FrameLayout implements UniPullLayout.IRefres
         mProgressBar.setVisibility(GONE);
         mArrowImageView.clearAnimation();
         mArrowImageView.setVisibility(VISIBLE);
-        mArrowImageView.setBackgroundResource(R.drawable.ic_home_black_24dp);
+        mArrowImageView.setImageResource(R.drawable.ic_pull_refresh_grey);
     }
 
     @Override

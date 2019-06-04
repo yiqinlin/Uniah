@@ -387,7 +387,7 @@ public class UniSegmentTopBar extends UniFrameLayout {
     }
 
     public void setRightButtonImage(int drawableResId) {
-        mRightBtnSrc.setBackgroundResource(drawableResId);
+        mRightBtnSrc.setImageResource(drawableResId);
     }
 
     public void setRightButtonClickListener(OnClickListener clickListener) {
@@ -396,7 +396,7 @@ public class UniSegmentTopBar extends UniFrameLayout {
     }
 
     public void setRightSubButtonImage(int drawableResId) {
-        mRightSubBtnSrc.setBackgroundResource(drawableResId);
+        mRightSubBtnSrc.setImageResource(drawableResId);
     }
 
     public void setOnRightSubButtonClickListener(OnClickListener clickListener) {
@@ -405,7 +405,7 @@ public class UniSegmentTopBar extends UniFrameLayout {
     }
 
     public void setLeftButtonImage(int drawableResId) {
-        mLeftBtnSrc.setBackgroundResource(drawableResId);
+        mLeftBtnSrc.setImageResource(drawableResId);
     }
 
     public void setLeftButtonClickListener(OnClickListener clickListener) {
@@ -414,7 +414,7 @@ public class UniSegmentTopBar extends UniFrameLayout {
     }
 
     public void setLeftSubButtonImage(int drawableResId) {
-        mLeftSubBtnSrc.setBackgroundResource(drawableResId);
+        mLeftSubBtnSrc.setImageResource(drawableResId);
     }
 
     public void setOnLeftSubButtonClickListener(OnClickListener clickListener) {

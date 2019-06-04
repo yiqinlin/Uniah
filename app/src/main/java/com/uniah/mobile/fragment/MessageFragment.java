@@ -13,6 +13,7 @@ import com.uniah.mobile.R;
 import com.uniah.mobile.activity.ContactActivity;
 import com.uniah.mobile.base.BaseViewPagerAdapter;
 import com.uniah.mobile.base.BaseFragment;
+import com.uniah.mobile.dialog.MoreDialog;
 import com.uniah.mobile.view.UniSegmentTopBar;
 import com.uniah.mobile.view.UniViewPager;
 
@@ -52,16 +53,17 @@ public class MessageFragment extends BaseFragment {
         mTopBar.setTabGravity(Gravity.START);
         mTopBar.setViewPager(mViewPager);
         mTopBar.hasCursor(true);
-        mTopBar.setRightButtonImage(R.drawable.ic_notifications_black_24dp);
+        mTopBar.setRightButtonImage(R.drawable.ic_more_theme);
         mTopBar.setShadow(0, 1);
         mTopBar.setRightButtonClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                MoreDialog dialog = new MoreDialog(getActivity(), getMoreDialogList());
+                dialog.show();
             }
         });
 
-        mTopBar.setRightSubButtonImage(R.drawable.ic_notifications_black_24dp);
+        mTopBar.setRightSubButtonImage(R.drawable.ic_contact_theme);
         mTopBar.setOnRightSubButtonClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <!--<View-->
+    <!--android:layout_width="15dp"-->
+    <!--android:layout_height="15dp"-->
+    <!--android:layout_gravity="end"-->
+    <!--android:layout_marginEnd="18dp"-->
+    <!--android:layout_marginBottom="-2dp"-->
+    <!--android:background="@drawable/triangle_top" />-->
+
+    <com.uniah.mobile.layout.UniFrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginBottom="9dp"
+        android:background="@android:color/white"
+        android:paddingStart="6dp"
+        android:paddingTop="9dp"
+        android:paddingEnd="6dp"
+        android:paddingBottom="9dp"
+        app:uni_radius="9dp"
+        app:uni_shadowAlpha="0.3"
+        app:uni_shadowElevation="7dp">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/dialog_more_recycleView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </com.uniah.mobile.layout.UniFrameLayout>
+</LinearLayout>

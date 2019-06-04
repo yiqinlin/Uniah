@@ -127,7 +127,7 @@ public class SetNoticeActivity extends AppCompatActivity {
 
     public void initTopBar() {
         mTopBar.setTitle("通知设置");
-        mTopBar.setLeftButtonImage(R.drawable.ic_home_black_24dp);
+        mTopBar.setLeftButtonImage(R.drawable.ic_back_theme);
         mTopBar.setOnLeftButtonClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

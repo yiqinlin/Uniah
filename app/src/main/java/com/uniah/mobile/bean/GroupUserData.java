@@ -4,10 +4,8 @@ import android.content.Context;
 import android.view.View;
 
 import com.uniah.mobile.R;
-import com.uniah.mobile.base.BaseData;
 import com.uniah.mobile.base.BaseViewHolder;
 import com.uniah.mobile.holder.GroupUserViewHolder;
-import com.uniah.mobile.holder.MineUniViewHolder;
 
 import java.io.Serializable;
 
@@ -20,7 +18,7 @@ public class GroupUserData extends GroupBaseData implements Serializable {
     private String slogan;
 
     private boolean isShowSubBtn;
-    private int subBackgroundResourceId;
+    private int subImageResourceId;
 
     private boolean isShowArrow;
 
@@ -85,12 +83,12 @@ public class GroupUserData extends GroupBaseData implements Serializable {
         isShowSubBtn = showSubBtn;
     }
 
-    public int getSubBackgroundResourceId() {
-        return subBackgroundResourceId;
+    public int getSubImageResourceId() {
+        return subImageResourceId;
     }
 
-    public void setSubBackgroundResourceId(int subBackgroundResourceId) {
-        this.subBackgroundResourceId = subBackgroundResourceId;
+    public void setSubImageResourceId(int subImageResourceId) {
+        this.subImageResourceId = subImageResourceId;
     }
 
     public boolean isShowArrow() {

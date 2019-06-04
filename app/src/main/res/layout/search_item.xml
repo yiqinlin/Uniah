@@ -20,11 +20,11 @@
             android:paddingLeft="4dp"
             android:paddingRight="4dp">
             <ImageView
-                android:layout_width="16dp"
-                android:layout_height="16dp"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
                 android:layout_gravity="center"
                 android:scaleType="fitCenter"
-                android:background="@drawable/ic_dashboard_black_24dp"/>
+                android:src="@drawable/ic_search_light"/>
         </FrameLayout>
 
         <TextView

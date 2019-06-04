@@ -10,7 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.uniah.mobile.R;
-import com.uniah.mobile.adapter.FeedAdapter;
 import com.uniah.mobile.adapter.NoticeListAdapter;
 import com.uniah.mobile.base.BaseData;
 import com.uniah.mobile.base.BaseFragment;
@@ -68,9 +67,9 @@ public class NoticeListFragment extends BaseFragment {
 
         MsgListHeadData data = new MsgListHeadData();
 
-        data.setLeftImageResource(R.drawable.ic_home_black_24dp);
-        data.setMidImageResource(R.drawable.ic_home_black_24dp);
-        data.setRightImageResource(R.drawable.ic_home_black_24dp);
+        data.setLeftImageResource(R.drawable.ic_like_white);
+        data.setMidImageResource(R.drawable.ic_comment_white);
+        data.setRightImageResource(R.drawable.ic_at_white);
 
         data.setLeftName("点赞");
         data.setMidName("评论");

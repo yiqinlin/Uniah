@@ -121,8 +121,8 @@
 
                         <ImageView
                             android:id="@+id/feed_item_hot_like_img"
-                            android:layout_width="16dp"
-                            android:layout_height="16dp"
+                            android:layout_width="13dp"
+                            android:layout_height="13dp"
                             android:layout_gravity="center_vertical"
                             android:background="@drawable/bg_like_select"
                             android:scaleType="fitCenter" />
@@ -168,10 +168,10 @@
 
                     <ImageView
                         android:id="@+id/feed_item_comment_img"
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
                         android:layout_gravity="center_vertical"
-                        android:background="@drawable/ic_home_black_24dp"
+                        android:src="@drawable/ic_comment_light"
                         android:scaleType="fitCenter" />
 
                     <TextView
@@ -200,10 +200,10 @@
 
                     <ImageView
                         android:id="@+id/feed_item_like_img"
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
                         android:layout_gravity="center_vertical"
-                        android:background="@drawable/bg_like_select"
+                        android:src="@drawable/bg_like_select"
                         android:scaleType="fitCenter" />
 
                     <TextView

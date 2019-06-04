@@ -23,8 +23,8 @@
 
             <ImageView
                 android:id="@+id/top_bar_btn_left_img"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
                 android:layout_gravity="center"
                 android:scaleType="fitCenter" />
         </com.uniah.mobile.layout.UniFrameLayout>
@@ -38,8 +38,8 @@
 
             <ImageView
                 android:id="@+id/top_bar_btn_left_sub_img"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
                 android:layout_gravity="center"
                 android:scaleType="fitCenter" />
         </com.uniah.mobile.layout.UniFrameLayout>
@@ -79,8 +79,8 @@
 
             <ImageView
                 android:id="@+id/top_bar_btn_right_sub_img"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
                 android:layout_gravity="center"
                 android:scaleType="fitCenter" />
         </com.uniah.mobile.layout.UniFrameLayout>
@@ -93,8 +93,8 @@
 
             <ImageView
                 android:id="@+id/top_bar_btn_right_img"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
                 android:layout_gravity="center"
                 android:scaleType="fitCenter" />
         </com.uniah.mobile.layout.UniFrameLayout>

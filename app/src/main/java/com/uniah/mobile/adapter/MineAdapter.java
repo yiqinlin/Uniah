@@ -265,7 +265,7 @@ public class MineAdapter extends BaseAdapter<BaseData> {
 
         mMineToolViewHolder.mFirst.setOnClickListener(mMineToolFirstClickListener);
         mMineToolViewHolder.mFirstBackground.setBackgroundResource(data.getFirstBackgroundResource());
-        mMineToolViewHolder.mFirstImg.setBackgroundResource(data.getFirstImageResource());
+        mMineToolViewHolder.mFirstImg.setImageResource(data.getFirstImageResource());
         mMineToolViewHolder.mFirstText.setText(data.getFirstName());
         if (data.getFirstCount() > 0) {
             mMineToolViewHolder.mFirstCount.setText(data.firstCountString());
@@ -276,7 +276,7 @@ public class MineAdapter extends BaseAdapter<BaseData> {
 
         mMineToolViewHolder.mSecond.setOnClickListener(mMineToolSecondClickListener);
         mMineToolViewHolder.mSecondBackground.setBackgroundResource(data.getSecondBackgroundResource());
-        mMineToolViewHolder.mSecondImg.setBackgroundResource(data.getSecondImageResource());
+        mMineToolViewHolder.mSecondImg.setImageResource(data.getSecondImageResource());
         mMineToolViewHolder.mSecondText.setText(data.getSecondName());
         if (data.getSecondCount() > 0) {
             mMineToolViewHolder.mSecondCount.setText(data.secondCountString());
@@ -287,7 +287,7 @@ public class MineAdapter extends BaseAdapter<BaseData> {
 
         mMineToolViewHolder.mThird.setOnClickListener(mMineToolThirdClickListener);
         mMineToolViewHolder.mThirdBackground.setBackgroundResource(data.getThirdBackgroundResource());
-        mMineToolViewHolder.mThirdImg.setBackgroundResource(data.getThirdImageResource());
+        mMineToolViewHolder.mThirdImg.setImageResource(data.getThirdImageResource());
         mMineToolViewHolder.mThirdText.setText(data.getThirdName());
         if (data.getThirdCount() > 0) {
             mMineToolViewHolder.mThirdCount.setText(data.thirdCountString());
@@ -298,7 +298,7 @@ public class MineAdapter extends BaseAdapter<BaseData> {
 
         mMineToolViewHolder.mFourth.setOnClickListener(mMineToolFourthClickListener);
         mMineToolViewHolder.mFourthBackground.setBackgroundResource(data.getFourthBackgroundResource());
-        mMineToolViewHolder.mFourthImg.setBackgroundResource(data.getFourthImageResource());
+        mMineToolViewHolder.mFourthImg.setImageResource(data.getFourthImageResource());
         mMineToolViewHolder.mFourthText.setText(data.getFourthName());
         if (data.getFourthCount() > 0) {
             mMineToolViewHolder.mFourthCount.setText(data.fourthCountString());

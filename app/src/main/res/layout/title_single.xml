@@ -50,10 +50,10 @@
 
             <ImageView
                 android:id="@+id/title_single_btn_sub_img"
-                android:layout_width="16dp"
-                android:layout_height="16dp"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
                 android:layout_gravity="center"
-                android:background="@drawable/ic_dashboard_black_24dp"
+                android:src="@drawable/ic_sort_theme"
                 android:scaleType="fitCenter" />
         </com.uniah.mobile.layout.UniFrameLayout>
 
@@ -65,7 +65,7 @@
             android:ellipsize="end"
             android:gravity="center"
             android:maxLines="1"
-            android:textColor="@color/text_light"
+            android:textColor="@color/text_grey"
             android:textSize="13sp"
             android:visibility="gone" />
 
@@ -78,10 +78,10 @@
 
             <ImageView
                 android:id="@+id/title_single_btn_img"
-                android:layout_width="16dp"
-                android:layout_height="16dp"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
                 android:layout_gravity="center"
-                android:background="@drawable/ic_home_black_24dp"
+                android:background="@drawable/ic_arrow_grey"
                 android:scaleType="fitCenter" />
         </com.uniah.mobile.layout.UniFrameLayout>
     </LinearLayout>

@@ -7,6 +7,7 @@ import android.widget.LinearLayout;
 
 import com.uniah.mobile.R;
 import com.uniah.mobile.activity.LauncherActivity;
+import com.uniah.mobile.activity.SearchActivity;
 import com.uniah.mobile.base.BaseAdapter;
 import com.uniah.mobile.base.BaseData;
 import com.uniah.mobile.base.BaseViewHolder;
@@ -49,7 +50,7 @@ public class MsgListAdapter extends BaseAdapter<BaseData> {
     private View.OnClickListener mSearchClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            Intent intent = new Intent(mContext, LauncherActivity.class);
+            Intent intent = new Intent(mContext, SearchActivity.class);
             mContext.startActivity(intent);
         }
     };

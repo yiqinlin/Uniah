@@ -63,10 +63,10 @@
 
             <ImageView
                 android:id="@+id/user_info_btn_img"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
                 android:layout_gravity="center"
-                android:background="@drawable/ic_home_black_24dp"
+                android:src="@drawable/ic_arrow_grey"
                 android:scaleType="fitCenter" />
         </com.uniah.mobile.layout.UniFrameLayout>
     </LinearLayout>

@@ -129,6 +129,16 @@ public abstract class BaseAdapter<T> extends RecyclerView.Adapter<BaseViewHolder
         notifyItemInserted(pos);
     }
 
+    public void notifyItemChangedWithObject(Object object) {
+        int index = 0;
+        for (Object data : mData) {
+            if (data == object) {
+                notifyItemChanged(index);
+            }
+            index++;
+        }
+    }
+
     public void remove(int pos) {
         mData.remove(pos);
         notifyItemRemoved(pos);

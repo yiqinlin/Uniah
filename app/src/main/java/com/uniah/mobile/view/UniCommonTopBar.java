@@ -113,7 +113,7 @@ public class UniCommonTopBar extends UniFrameLayout {
     }
 
     public void setLeftButtonImage(int drawableResId) {
-        mBtnLeftSrc.setBackgroundResource(drawableResId);
+        mBtnLeftSrc.setImageResource(drawableResId);
     }
 
     public void setOnLeftButtonClickListener(View.OnClickListener clickListener) {
@@ -121,7 +121,7 @@ public class UniCommonTopBar extends UniFrameLayout {
     }
 
     public void setSubLeftButtonImage(int drawableResId) {
-        mBtnSubLeftSrc.setBackgroundResource(drawableResId);
+        mBtnSubLeftSrc.setImageResource(drawableResId);
         mBtnSubLeftLayout.setVisibility(VISIBLE);
         mBtnSubRightLayout.setVisibility(VISIBLE);
     }
@@ -132,7 +132,7 @@ public class UniCommonTopBar extends UniFrameLayout {
 
 
     public void setRightButtonImage(int drawableResId) {
-        mBtnRightSrc.setBackgroundResource(drawableResId);
+        mBtnRightSrc.setImageResource(drawableResId);
     }
 
     public void setOnRightButtonClickListener(View.OnClickListener clickListener) {
@@ -140,7 +140,7 @@ public class UniCommonTopBar extends UniFrameLayout {
     }
 
     public void setSubRightButtonImage(int drawableResId) {
-        mBtnSubRightSrc.setBackgroundResource(drawableResId);
+        mBtnSubRightSrc.setImageResource(drawableResId);
         mBtnSubLeftLayout.setVisibility(VISIBLE);
         mBtnSubRightLayout.setVisibility(VISIBLE);
     }

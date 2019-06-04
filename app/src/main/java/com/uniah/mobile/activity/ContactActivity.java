@@ -1,5 +1,6 @@
 package com.uniah.mobile.activity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -53,9 +54,9 @@ public class ContactActivity extends AppCompatActivity {
     private void initData() {
         MsgListHeadData data = new MsgListHeadData();
 
-        data.setLeftImageResource(R.drawable.ic_home_black_24dp);
-        data.setMidImageResource(R.drawable.ic_home_black_24dp);
-        data.setRightImageResource(R.drawable.ic_home_black_24dp);
+        data.setLeftImageResource(R.drawable.ic_follow_white);
+        data.setMidImageResource(R.drawable.ic_group_chat);
+        data.setRightImageResource(R.drawable.ic_team_white);
 
         data.setLeftName("新朋友");
         data.setMidName("群聊");
@@ -71,6 +72,14 @@ public class ContactActivity extends AppCompatActivity {
         UserInfoData data2 = new UserInfoData();
         data2.setHead("http://39.108.118.215/imgs/eb84d6962419be7594bd804bca2cbaa0.jpg");
         data2.setName("安吉拉");
+        data2.setOnItemClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ContactActivity.this, ChatActivity.class);
+                intent.putExtra("acceptNick", "安吉拉");
+                startActivity(intent);
+            }
+        });
         mAdapter.add(data2);
 
         HintData data3 = new HintData();
@@ -80,6 +89,7 @@ public class ContactActivity extends AppCompatActivity {
         UserInfoData data4 = new UserInfoData();
         data4.setHead("http://39.108.118.215/imgs/eb84d6962419be7594bd804bca2cbaa0.jpg");
         data4.setName("程明");
+
         mAdapter.add(data4);
 
         HintData data5 = new HintData();
@@ -101,7 +111,7 @@ public class ContactActivity extends AppCompatActivity {
 
     public void initTopBar() {
         mTopBar.setTitle("通讯录");
-        mTopBar.setLeftButtonImage(R.drawable.ic_home_black_24dp);
+        mTopBar.setLeftButtonImage(R.drawable.ic_back_theme);
         mTopBar.setOnLeftButtonClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

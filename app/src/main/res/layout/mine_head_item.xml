@@ -71,31 +71,31 @@
 
                 <com.uniah.mobile.layout.UniFrameLayout
                     android:id="@+id/mine_head_btn_sub_layout"
-                    android:layout_width="32dp"
+                    android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_gravity="center_vertical">
 
                     <ImageView
                         android:id="@+id/mine_head_btn_sub_img"
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
                         android:layout_gravity="center"
-                        android:background="@drawable/ic_home_black_24dp"
+                        android:src="@drawable/ic_qrcode_theme"
                         android:scaleType="fitCenter" />
                 </com.uniah.mobile.layout.UniFrameLayout>
 
                 <com.uniah.mobile.layout.UniFrameLayout
                     android:id="@+id/mine_head_btn_layout"
-                    android:layout_width="32dp"
+                    android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_gravity="center_vertical">
 
                     <ImageView
                         android:id="@+id/mine_head_btn_img"
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
                         android:layout_gravity="center"
-                        android:background="@drawable/ic_home_black_24dp"
+                        android:src="@drawable/ic_set_theme"
                         android:scaleType="fitCenter" />
                 </com.uniah.mobile.layout.UniFrameLayout>
             </LinearLayout>

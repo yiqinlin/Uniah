@@ -1,6 +1,7 @@
 package com.uniah.mobile.fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -12,16 +13,20 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.uniah.mobile.R;
+import com.uniah.mobile.activity.SetFeedbackActivity;
 import com.uniah.mobile.adapter.LifeAdapter;
 import com.uniah.mobile.base.BaseData;
 import com.uniah.mobile.base.BaseFragment;
 import com.uniah.mobile.bean.CarouselData;
 import com.uniah.mobile.bean.LifeData;
+import com.uniah.mobile.bean.MoreDialogData;
+import com.uniah.mobile.dialog.MoreDialog;
 import com.uniah.mobile.layout.UniPullLayout;
 import com.uniah.mobile.view.UniSegmentTopBar;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -92,16 +97,17 @@ public class LifeFragment extends BaseFragment {
         mTopBar.setTabLeft("生活");
         mTopBar.setTabGravity(Gravity.START);
         mTopBar.hasCursor(false);
-        mTopBar.setRightButtonImage(R.drawable.ic_notifications_black_24dp);
+        mTopBar.setRightButtonImage(R.drawable.ic_more_theme);
         mTopBar.setShadow(0, 0);
         mTopBar.setRightButtonClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                MoreDialog dialog = new MoreDialog(getActivity(), getMoreDialogList());
+                dialog.show();
             }
         });
 
-        mTopBar.setRightSubButtonImage(R.drawable.ic_notifications_black_24dp);
+        mTopBar.setRightSubButtonImage(R.drawable.ic_edit_theme);
         mTopBar.setOnRightSubButtonClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -8,6 +8,7 @@ import android.widget.Toast;
 
 import com.uniah.mobile.R;
 import com.uniah.mobile.activity.LauncherActivity;
+import com.uniah.mobile.activity.SearchActivity;
 import com.uniah.mobile.base.BaseAdapter;
 import com.uniah.mobile.base.BaseData;
 import com.uniah.mobile.base.BaseViewHolder;
@@ -42,7 +43,7 @@ public class ContactAdapter extends BaseAdapter<BaseData> {
             MsgListHeadViewHolder viewHolder = (MsgListHeadViewHolder) holder;
             viewHolder.mLeft.setOnClickListener(mMsgHeadLeftClickListener);
             viewHolder.mLeftBackground.setBackgroundResource(data.getLeftBackgroundResource());
-            viewHolder.mLeftImg.setBackgroundResource(data.getLeftImageResource());
+            viewHolder.mLeftImg.setImageResource(data.getLeftImageResource());
             viewHolder.mLeftText.setText(data.getLeftName());
             if (data.getLeftCount() > 0) {
                 viewHolder.mLeftCount.setText(data.leftCountString());
@@ -52,7 +53,7 @@ public class ContactAdapter extends BaseAdapter<BaseData> {
             }
             viewHolder.mMid.setOnClickListener(mMsgHeadMidClickListener);
             viewHolder.mMidBackground.setBackgroundResource(data.getMidBackgroundResource());
-            viewHolder.mMidImg.setBackgroundResource(data.getMidImageResource());
+            viewHolder.mMidImg.setImageResource(data.getMidImageResource());
             viewHolder.mMidText.setText(data.getMidName());
             if (data.getMidCount() > 0) {
                 viewHolder.mMidCount.setText(data.midCountString());
@@ -62,7 +63,7 @@ public class ContactAdapter extends BaseAdapter<BaseData> {
             }
             viewHolder.mRight.setOnClickListener(mMsgHeadRightClickListener);
             viewHolder.mRightBackground.setBackgroundResource(data.getRightBackgroundResource());
-            viewHolder.mRightImg.setBackgroundResource(data.getRightImageResource());
+            viewHolder.mRightImg.setImageResource(data.getRightImageResource());
             viewHolder.mRightText.setText(data.getRightName());
             if (data.getRightCount() > 0) {
                 viewHolder.mRightCount.setText(data.rightCountString());
@@ -95,6 +96,7 @@ public class ContactAdapter extends BaseAdapter<BaseData> {
 
             UniImageHelper.displayImage(mContext, data.getHead(), viewHolder.mHead);
 
+            viewHolder.mItem.setOnClickListener(data.getOnItemClickListener());
             viewHolder.mNick.setText(data.getName());
             if (!UniTextHelper.isEmpty(data.getFlag())) {
                 viewHolder.mFlag.setText(data.getFlag());
@@ -103,27 +105,20 @@ public class ContactAdapter extends BaseAdapter<BaseData> {
                 viewHolder.mFlag.setVisibility(View.GONE);
             }
             if (data.getImgId() != 0) {
-                viewHolder.mBtnImg.setBackgroundResource(data.getImgId());
+                viewHolder.mBtnImg.setImageResource(data.getImgId());
                 viewHolder.mBtnLayout.setVisibility(View.VISIBLE);
-                viewHolder.mBtnLayout.setOnClickListener(mUserInfoBtnClickListener);
+                viewHolder.mBtnLayout.setOnClickListener(data.getOnItemClickListener());
             } else {
                 viewHolder.mBtnLayout.setVisibility(View.GONE);
             }
         }
     }
 
-    private View.OnClickListener mUserInfoBtnClickListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            Toast.makeText(mContext, "click user info btn", Toast.LENGTH_SHORT).show();
-        }
-    };
-
 
     private View.OnClickListener mSearchClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            Intent intent = new Intent(mContext, LauncherActivity.class);
+            Intent intent = new Intent(mContext, SearchActivity.class);
             mContext.startActivity(intent);
         }
     };

@@ -81,10 +81,10 @@
 
         <ImageView
             android:id="@+id/user_info_title_more_img"
-            android:layout_width="22dp"
-            android:layout_height="22dp"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
             android:layout_gravity="center"
             android:scaleType="fitCenter"
-            android:background="@drawable/ic_home_black_24dp" />
+            android:src="@drawable/ic_more_light" />
     </com.uniah.mobile.layout.UniFrameLayout>
 </LinearLayout>

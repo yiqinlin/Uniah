@@ -1,5 +1,6 @@
 package com.uniah.mobile.activity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,7 +13,7 @@ import com.uniah.mobile.adapter.GroupItemAdapter;
 import com.uniah.mobile.base.BaseData;
 import com.uniah.mobile.bean.GroupHeadData;
 import com.uniah.mobile.bean.GroupTextData;
-import com.uniah.mobile.bean.GroupUserData;
+import com.uniah.mobile.dialog.UniListDialog;
 import com.uniah.mobile.layout.IUniLayout;
 import com.uniah.mobile.layout.UniPullLayout;
 import com.uniah.mobile.util.UniStatusBarHelper;
@@ -105,12 +106,26 @@ public class SetUserDataActivity extends AppCompatActivity {
         mAdapter.add(textData2);
 
 
-
-        GroupTextData textData3 = new GroupTextData();
+        final GroupTextData textData3 = new GroupTextData();
         textData3.setText("性别");
         textData3.setSubText("男");
         textData3.setShowBtn(true);
         textData3.setHideRadiusSide(IUniLayout.HIDE_RADIUS_SIDE_BOTTOM);
+        textData3.setOnItemClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                UniListDialog dialog = new UniListDialog.Builder(SetUserDataActivity.this)
+                        .setChoiceItems(new String[]{"女", "男"}, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                if (!textData3.getSubText().equals(which == 1 ? "男" : "女")) {
+                                    textData3.setSubText(which == 1 ? "男" : "女");
+                                    mAdapter.notifyItemChangedWithObject(textData3);
+                                }
+                            }
+                        }).setCancelable(true).show();
+            }
+        });
         mAdapter.add(textData3);
 
         GroupTextData textData4 = new GroupTextData();
@@ -138,11 +153,19 @@ public class SetUserDataActivity extends AppCompatActivity {
 
     public void initTopBar() {
         mTopBar.setTitle("我的资料");
-        mTopBar.setLeftButtonImage(R.drawable.ic_home_black_24dp);
+        mTopBar.setLeftButtonImage(R.drawable.ic_back_theme);
         mTopBar.setOnLeftButtonClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
+            }
+        });
+
+        mTopBar.setRightButtonImage(R.drawable.ic_qrcode_theme);
+        mTopBar.setOnRightButtonClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
             }
         });
     }

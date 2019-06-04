@@ -11,8 +11,12 @@ import android.view.ViewGroup;
 
 import com.uniah.mobile.R;
 import com.uniah.mobile.activity.FeedPushActivity;
+import com.uniah.mobile.activity.SetFeedbackActivity;
+import com.uniah.mobile.base.BaseData;
 import com.uniah.mobile.base.BaseViewPagerAdapter;
 import com.uniah.mobile.base.BaseFragment;
+import com.uniah.mobile.bean.MoreDialogData;
+import com.uniah.mobile.dialog.MoreDialog;
 import com.uniah.mobile.view.UniSegmentTopBar;
 import com.uniah.mobile.view.UniViewPager;
 
@@ -56,15 +60,16 @@ public class HomeFragment extends BaseFragment {
         mTopBar.setTabGravity(Gravity.START);
         mTopBar.setViewPager(mViewPager);
         mTopBar.hasCursor(true);
-        mTopBar.setRightButtonImage(R.drawable.ic_notifications_black_24dp);
+        mTopBar.setRightButtonImage(R.drawable.ic_more_theme);
         mTopBar.setRightButtonClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                MoreDialog dialog = new MoreDialog(getActivity(), getMoreDialogList());
+                dialog.show();
             }
         });
 
-        mTopBar.setRightSubButtonImage(R.drawable.ic_notifications_black_24dp);
+        mTopBar.setRightSubButtonImage(R.drawable.ic_add_theme);
         mTopBar.setOnRightSubButtonClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -23,11 +23,11 @@
             android:id="@+id/feed_item_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="9dp"
             android:letterSpacing="0.03"
             android:lineSpacingExtra="3sp"
             android:textColor="@color/text_dark"
-            android:textSize="14sp"
-            android:layout_marginBottom="9dp" />
+            android:textSize="14sp" />
 
         <com.uniah.mobile.view.UniRadiusView
             android:id="@+id/feed_item_img_single"
@@ -64,25 +64,26 @@
                 android:layout_width="88dp"
                 android:layout_height="34dp"
                 android:layout_gravity="center"
-                android:gravity="center"
                 android:background="@drawable/bg_detail_btn"
-                android:orientation="horizontal">
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingLeft="4dp"
+                android:paddingRight="4dp">
 
                 <ImageView
                     android:id="@+id/detail_head_left_btn_img"
-                    android:layout_width="18dp"
-                    android:layout_height="18dp"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
                     android:layout_gravity="center"
-                    android:background="@drawable/ic_home_black_24dp"
-                    android:scaleType="fitCenter" />
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_comment_light" />
 
                 <TextView
                     android:id="@+id/detail_head_left_btn_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
                     android:gravity="center"
-                    android:paddingLeft="4dp"
-                    android:paddingRight="4dp"
                     android:textColor="@color/activate_text_color"
                     android:textSize="13sp" />
             </LinearLayout>
@@ -98,23 +99,24 @@
                 android:layout_gravity="center"
                 android:background="@drawable/bg_detail_btn"
                 android:gravity="center"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:paddingLeft="4dp"
+                android:paddingRight="4dp">
 
                 <ImageView
                     android:id="@+id/detail_head_right_btn_img"
-                    android:layout_width="18dp"
-                    android:layout_height="18dp"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
                     android:layout_gravity="center"
-                    android:background="@drawable/ic_home_black_24dp"
-                    android:scaleType="fitCenter" />
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/bg_like_select" />
 
                 <TextView
                     android:id="@+id/detail_head_right_btn_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
                     android:gravity="center"
-                    android:paddingLeft="4dp"
-                    android:paddingRight="4dp"
                     android:textColor="@color/activate_text_color"
                     android:textSize="13sp" />
             </LinearLayout>

@@ -1,6 +1,7 @@
 package com.uniah.mobile.adapter;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.View;
 import android.widget.Toast;
@@ -12,6 +13,7 @@ import com.uniah.mobile.base.BaseData;
 import com.uniah.mobile.base.BaseViewHolder;
 import com.uniah.mobile.bean.FeedData;
 import com.uniah.mobile.bean.FeedGridData;
+import com.uniah.mobile.dialog.UniListDialog;
 import com.uniah.mobile.holder.FeedViewHolder;
 import com.uniah.mobile.util.UniImageHelper;
 
@@ -72,7 +74,16 @@ public class FeedAdapter extends BaseAdapter<BaseData> {
     private View.OnClickListener mMoreClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            Toast.makeText(mContext, "click more", Toast.LENGTH_SHORT).show();
+
+            List<String> list = new ArrayList<>();
+            list.add("举报");
+            UniListDialog dialog = new UniListDialog.Builder(mContext)
+            .setChoiceItems(list.toArray(new String[0]), new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    Toast.makeText(mContext, "已举报", Toast.LENGTH_SHORT).show();
+                }
+            }).setCancelable(true).show();
         }
     };
 

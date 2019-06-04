@@ -62,7 +62,7 @@ public class NoticeActivity extends BaseFragmentActivity {
         mTopBar.setViewPager(mViewPager);
         mTopBar.hasCursor(true);
         mTopBar.setRightButtonClickListener(null);
-        mTopBar.setLeftButtonImage(R.drawable.ic_notifications_black_24dp);
+        mTopBar.setLeftButtonImage(R.drawable.ic_back_theme);
         mTopBar.setLeftButtonClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

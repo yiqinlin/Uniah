@@ -82,10 +82,10 @@ public class MineFragment extends BaseFragment {
 
         data2.setToolTitle("我的工具");
 
-        data2.setFirstImageResource(R.drawable.ic_home_black_24dp);
-        data2.setSecondImageResource(R.drawable.ic_home_black_24dp);
-        data2.setThirdImageResource(R.drawable.ic_home_black_24dp);
-        data2.setFourthImageResource(R.drawable.ic_home_black_24dp);
+        data2.setFirstImageResource(R.drawable.ic_like_white);
+        data2.setSecondImageResource(R.drawable.ic_comment_white);
+        data2.setThirdImageResource(R.drawable.ic_mark_white);
+        data2.setFourthImageResource(R.drawable.ic_face_white);
 
         data2.setFirstName("我的赞");
         data2.setSecondName("我的评论");

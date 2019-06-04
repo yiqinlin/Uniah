@@ -20,6 +20,7 @@ public class UserInfoData extends BaseData implements Serializable {
     private int imgId;
 
     private int contentType;
+    private View.OnClickListener onItemClickListener;
 
     public UserInfoData() {
     }
@@ -80,5 +81,13 @@ public class UserInfoData extends BaseData implements Serializable {
 
     public void setContentType(int contentType) {
         this.contentType = contentType;
+    }
+
+    public View.OnClickListener getOnItemClickListener() {
+        return onItemClickListener;
+    }
+
+    public void setOnItemClickListener(View.OnClickListener onItemClickListener) {
+        this.onItemClickListener = onItemClickListener;
     }
 }

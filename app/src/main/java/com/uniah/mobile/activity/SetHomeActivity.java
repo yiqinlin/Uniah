@@ -44,7 +44,6 @@ public class SetHomeActivity extends AppCompatActivity {
         mAdapter = new GroupItemAdapter(this, new ArrayList<BaseData>());
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setAdapter(mAdapter);
-
     }
 
     private void initData() {
@@ -54,7 +53,7 @@ public class SetHomeActivity extends AppCompatActivity {
         userData.setSlogan("万物皆可破！");
         userData.setShowArrow(true);
         userData.setShowSubBtn(true);
-        userData.setSubBackgroundResourceId(R.drawable.ic_home_black_24dp);
+        userData.setSubImageResourceId(R.drawable.ic_qrcode_grey);
         userData.setOnItemClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -181,7 +180,7 @@ public class SetHomeActivity extends AppCompatActivity {
 
     public void initTopBar() {
         mTopBar.setTitle("设置");
-        mTopBar.setLeftButtonImage(R.drawable.ic_home_black_24dp);
+        mTopBar.setLeftButtonImage(R.drawable.ic_back_theme);
         mTopBar.setOnLeftButtonClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

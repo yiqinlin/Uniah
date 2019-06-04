@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="end"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal">
+
+        <com.uniah.mobile.view.UniAnimImageView
+            android:id="@+id/chat_text_item_anim"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="end|bottom"
+            android:layout_marginEnd="7dp"
+            android:layout_marginBottom="7dp"
+            android:src="@drawable/loading_progress_grey_rotate"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/chat_text_item_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/bg_chat_user"
+            android:gravity="start|center_vertical"
+            android:letterSpacing="0.03"
+            android:lineSpacingExtra="3dp"
+            android:maxWidth="240dp"
+            android:minWidth="0dp"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:textColor="#ffffff"
+            android:textSize="15sp" />
+
+        <com.uniah.mobile.view.UniRadiusView
+            android:id="@+id/chat_text_item_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="150dp"
+            android:maxHeight="180dp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:visibility="gone"
+            app:uni_cornerRadius="9dp" />
+    </LinearLayout>
+
+    <com.uniah.mobile.view.UniRadiusView
+        android:id="@+id/chat_text_item_head"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="10dp"
+        app:uni_isCircle="true" />
+</LinearLayout>

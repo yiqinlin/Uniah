@@ -79,7 +79,10 @@
         <activity android:name=".activity.SetAboutActivity" />
         <activity android:name=".activity.SetFeedbackActivity" />
         <activity android:name=".activity.SetSafeLockActivity" />
-        <activity android:name=".activity.SetNoticeActivity"></activity>
+        <activity android:name=".activity.SetNoticeActivity" />
+        <activity android:name=".activity.ChatActivity" />
+        <activity android:name=".activity.ChatSetActivity" />
+        <activity android:name=".activity.SearchActivity"></activity>
     </application>
 
 </manifest>

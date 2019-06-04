@@ -65,7 +65,7 @@ public class UniLoadView extends FrameLayout implements UniPullLayout.ILoadView 
         mProgressBar.setVisibility(GONE);
         mArrowImageView.clearAnimation();
         mArrowImageView.setVisibility(VISIBLE);
-        mArrowImageView.setBackgroundResource(R.drawable.ic_notifications_black_24dp);
+        mArrowImageView.setImageResource(R.drawable.ic_pull_load_grey);
     }
 
     @Override

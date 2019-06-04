@@ -34,6 +34,6 @@
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_gravity="center"
-            android:background="@drawable/ic_send" />
+            android:background="@drawable/ic_send_theme" />
     </FrameLayout>
 </LinearLayout>

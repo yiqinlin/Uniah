@@ -12,6 +12,7 @@ import com.uniah.mobile.base.BaseFragmentActivity;
 import com.uniah.mobile.fragment.LifeFragment;
 import com.uniah.mobile.fragment.MessageFragment;
 import com.uniah.mobile.fragment.MineFragment;
+import com.uniah.mobile.util.UniDisplayHelper;
 import com.uniah.mobile.view.UniViewPager;
 import com.uniah.mobile.fragment.HomeFragment;
 
@@ -43,16 +44,7 @@ public class MainActivity extends BaseFragmentActivity {
 
         navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-    }
-
-    private void setBottomViewItem(int item) {
-        if (menuItem != null) {
-            menuItem.setChecked(false);
-        } else {
-            navigation.getMenu().getItem(0).setChecked(false);
-        }
-        menuItem = navigation.getMenu().getItem(item);
-        menuItem.setChecked(true);
+        navigation.setItemIconSize(UniDisplayHelper.dp2px(this, 20));
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener

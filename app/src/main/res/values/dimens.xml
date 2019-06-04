@@ -5,4 +5,5 @@
 
     <dimen name="design_bottom_navigation_active_text_size">11sp</dimen>
     <dimen name="design_bottom_navigation_text_size">11sp</dimen>
+    <dimen name="design_bottom_navigation_height">53dp</dimen>
 </resources>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <com.uniah.mobile.layout.UniLinearLayout
+        android:id="@+id/item_group_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:background="@android:color/white"
+        android:orientation="vertical"
+        app:uni_radius="9dp"
+        app:uni_shadowAlpha="0.1"
+        app:uni_shadowElevation="2dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_press_select"
+            android:orientation="horizontal">
+
+            <com.uniah.mobile.view.UniRadiusView
+                android:id="@+id/item_group_history_head"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="9dp"
+                android:layout_marginEnd="9dp"
+                android:layout_marginBottom="9dp"
+                app:uni_isCircle="true" />
+
+            <TextView
+                android:id="@+id/item_group_history_nick"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="@color/text_dark"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/item_group_history_flag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="3dp"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="1"
+                android:textColor="@color/text_normal"
+                android:textSize="15sp"
+                android:visibility="gone" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <com.uniah.mobile.layout.UniFrameLayout
+                android:id="@+id/item_group_history_btn_layout"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/item_group_history_btn_img"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ic_close_grey"
+                    android:scaleType="fitCenter" />
+            </com.uniah.mobile.layout.UniFrameLayout>
+        </LinearLayout>
+
+        <View
+            android:id="@+id/item_group_line"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:background="@color/item_line" />
+    </com.uniah.mobile.layout.UniLinearLayout>
+
+</LinearLayout>

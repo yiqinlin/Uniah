@@ -11,6 +11,7 @@ public abstract class GroupBaseData extends BaseData {
     private View.OnClickListener onItemClickListener;
     private int hideRadiusSide;
     private boolean isLastItem;
+    private boolean lineNone;
 
     public View.OnClickListener getOnItemClickListener() {
         return onItemClickListener;
@@ -34,5 +35,13 @@ public abstract class GroupBaseData extends BaseData {
 
     public void setLastItem(boolean lastItem) {
         isLastItem = lastItem;
+    }
+
+    public boolean isLineNone() {
+        return lineNone;
+    }
+
+    public void setLineNone(boolean lineNone) {
+        this.lineNone = lineNone;
     }
 }
